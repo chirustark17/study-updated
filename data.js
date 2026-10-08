@@ -1,0 +1,827 @@
+// ============================================================
+// KAS PRELIMS 2026 — MASTER DATA (v2)
+// Consolidated from Part A (Syllabus/NCERT/Citations) and
+// Part B (PYQ Pattern Analysis) decks + original strategy PDF.
+// v2 adds: priority stars, Karnataka-angle flags, "what to nail
+// down" study targets for History, PYQ trace citations, and a
+// practice-question bank (real + clearly-labeled original).
+// ============================================================
+
+const MASTER_DATA = {
+
+  meta: {
+    examDate: "2026-11-15",
+    title: "KAS Prelims 2026",
+    subtitle: "Complete Study Companion",
+    preparedFor: "Chirag K S"
+  },
+
+  // ---------------- PATTERN FACTS ----------------
+  pattern: {
+    papers: [
+      { name: "Paper I", questions: 100, marks: 200, sections: "Current Events (40) + Humanities: History, Geography, Polity, Economy (60)" },
+      { name: "Paper II", questions: 100, marks: 200, sections: "Karnataka State GS (40) + Science/Tech/Environment (30) + Mental Ability (30)" }
+    ],
+    facts: [
+      "400 total marks, 200 questions, 2 hours per paper",
+      "−0.25 negative marking for each wrong answer; 0 penalty for unattempted",
+      "Prelims marks are NOT added to final merit — purely qualifying, 1:15 ratio advances to Mains",
+      "General Mental Ability capped at SSLC (Class 10) difficulty; everything else at degree level",
+      "Question paper set in both Kannada and English"
+    ]
+  },
+
+  // ---------------- PYQ FORMAT TYPES ----------------
+  questionTypes: [
+    { id: 1, name: "Straight MCQ", desc: "Single best answer, no sub-statements.", example: "Which of the following is the highest peak in Karnataka?" },
+    { id: 2, name: "Statement correctness", desc: "3-4 lettered statements (a)(b)(c)(d); pick which combination is correct.", example: "Which of the following statements are correct with reference to X? (1) a,b,c (2) b,c,d ..." },
+    { id: 3, name: "Statement correctness w/ count", desc: "Same as above, but options are \"Only 1/2/3/4 statements are correct\" — you must count, not just identify.", example: "How many of the above statements are correct? (1) Only one (2) Only two ..." },
+    { id: 4, name: "Match the following", desc: "Two lists (List-I / List-II); match items, choose the correct combination code.", example: "Match List-I (Schemes) with List-II (Ministries)." },
+    { id: 5, name: "Assertion-Reason", desc: "Assertion (A) + Reason (R); judge truth of each AND whether R explains A.", example: "Both A and R are true and R is the correct explanation of A." },
+    { id: 6, name: "Arrange in sequence", desc: "Put items in chronological/ascending/descending order; choose the matching code.", example: "Arrange the following events in chronological order." },
+    { id: 7, name: "Logical reasoning (GMA only)", desc: "Blood relations, coding, syllogism, seating arrangement, direction sense, series.", example: "If A is C's mother and D is B's son..." },
+    { id: 8, name: "Quantitative (GMA only)", desc: "Percentages, probability, averages, profit-loss, time-work, basic algebra.", example: "A number reduced by 25% becomes 225..." },
+    { id: 9, name: "Reading comprehension (GMA only)", desc: "One passage, 3-7 questions in a row testing inference/vocabulary/main idea.", example: "According to the passage, the author believes..." }
+  ],
+
+  // ---------------- FORMAT TREND (chart data) ----------------
+  formatTrend: {
+    labels: ["2020 Paper I", "2024 (Dec) Paper I"],
+    series: [
+      { name: "Straight MCQ", data: [80, 24], color: "#7A8296" },
+      { name: "Statement-correctness (incl. count)", data: [17, 66], color: "#16233F" },
+      { name: "Match the following", data: [2, 7], color: "#C9812F" }
+    ]
+  },
+
+  // ---------------- TOPIC WEIGHTAGE (chart data) ----------------
+  topicWeightage: {
+    labels: ["Geography", "Economy", "History", "Polity", "CA-International", "CA-National", "Env & Ecology", "Sci & Tech", "CA-Karnataka"],
+    series: [
+      { name: "2020 (Aug) Paper I", data: [18, 17, 17, 14, 13, 13, 6, 1, 1], color: "#7A8296" },
+      { name: "2024 (Dec) Paper I", data: [16, 17, 16, 14, 15, 12, 2, 6, 2], color: "#16233F" }
+    ]
+  },
+
+  // ---------------- WHERE FORMATS APPEAR ----------------
+  paperCharacter: {
+    paperI: [
+      "Statement-correctness (plain + count-based) dominates — confirmed 66% in the most recent (Dec 2024) paper",
+      "Straight MCQ still present but now a minority format",
+      "Match-the-following and Assertion-Reason appear as a small but consistent minority (7-9 combined)",
+      "ZERO General Mental Ability questions — confirmed across all 4 papers analyzed"
+    ],
+    paperII: [
+      "First ~40 questions: Karnataka-specific current affairs, heavy statement-correctness format, very scheme/policy-detail focused",
+      "Next block: Science, Tech, Environment — mixes straight MCQ with statement-correctness; Assertion-Reason appears here specifically (not in Paper I)",
+      "GMA is a solid CONTIGUOUS block (not scattered) — confirmed in both 2020 and Aug 2024 papers, roughly the last 25-30 questions",
+      "GMA block order is consistent: Reasoning → Numeracy → Comprehension (passage-based, always last)"
+    ]
+  },
+
+  // ---------------- RECURRING HIGH-VALUE TOPICS ----------------
+  recurringTopics: [
+    { subject: "History", items: [
+      "Karnataka freedom movement (Rani Chennamma's commander, Dandi March participants, KPCC Flag Satyagraha, Salt Satyagraha/Vidurashwatha/Isuru)",
+      "Hoysala & Vijayanagara architecture / Karnataka dynasties",
+      "Ancient South Indian administration: Satavahana town bodies, Chola landholder associations"
+    ]},
+    { subject: "Polity", items: [
+      "Specific numbered Articles: 164, 12, 355, 270/271 (cess-surcharge), 21A",
+      "Pardoning power / Pocket Veto (Indian vs US comparison)",
+      "Committees & commissions matched to chairmen"
+    ]},
+    { subject: "Geography", items: [
+      "Karst topography & wind-erosion landforms (near-identical style across years)",
+      "Drainage patterns (dendritic, radial, pinnate, trellis)",
+      "Ozone layer / atmospheric layers"
+    ]},
+    { subject: "Economy", items: [
+      "RBI monetary tools: Repo, CRR, Reverse Repo, LAF, OMO",
+      "Finance Commission & GST Council constitutional basis",
+      "Fiscal/revenue/primary deficit distinctions"
+    ]},
+    { subject: "Current Affairs", items: [
+      "Geopolitical alliances/groupings as a CATEGORY (BRICS, Chip4, Djibouti Code) — the specific event changes yearly but this question-category is a fixture",
+      "UNESCO World Heritage additions (India/Karnataka)",
+      "Ramsar wetland additions"
+    ]}
+  ],
+
+  // ---------------- GMA SEQUENCE ----------------
+  gmaSequence: [
+    { q: "Q10", topic: "Blood relations", type: "Reasoning" },
+    { q: "Q11", topic: "Symbolic operations (redefined math symbols)", type: "Numeracy" },
+    { q: "Q12", topic: "Percentage", type: "Numeracy" },
+    { q: "Q13", topic: "Averages", type: "Numeracy" },
+    { q: "Q14", topic: "Probability", type: "Numeracy" },
+    { q: "Q15", topic: "Combinations", type: "Numeracy" },
+    { q: "Q16", topic: "Probability", type: "Numeracy" },
+    { q: "Q17", topic: "Probability", type: "Numeracy" },
+    { q: "Q18", topic: "Linear equations (heads & feet)", type: "Numeracy" },
+    { q: "Q19", topic: "Syllogism", type: "Reasoning" },
+    { q: "Q20", topic: "Seating arrangement", type: "Reasoning" },
+    { q: "Q21-23", topic: "Passage 1 (3 questions)", type: "Comprehension" },
+    { q: "Q24-27", topic: "Passage 2 (4 questions)", type: "Comprehension" }
+  ],
+
+  // ---------------- KARNATAKA STATE GS EXAMPLES ----------------
+  karnatakaGS: [
+    { cat: "Scheme eligibility specifics", ex: "Yuva Nidhi eligibility criteria, Pourakarmika Gruha Bhagya Yojana construction limits, Sandhya Suraksha age/income limits" },
+    { cat: "Budget line-items", ex: "Food parks announced at specific airports, road network km targets under Pragati Path, healthcare budget allocation" },
+    { cat: "Named institutions & their mandates", ex: "KKRDB jurisdiction & chairperson rules, Karnataka Agricultural Prices Commission, KEONICS activities" },
+    { cat: "Recent policy documents by exact name", ex: "Startup Policy 2022-27 pillars, AVGC-XR Policy 2024-2029, Data Centre Policy 2022-27, Karnataka Stamp (Amendment) Act 2023" },
+    { cat: "Karnataka-specific firsts/awards", ex: "First Kambala at Bengaluru Palace, Padma Award recipients from Karnataka, Blue Flag beaches (Kasarkod, Padubidri)" }
+  ],
+
+  // ---------------- CURRENT AFFAIRS TRACKING CATEGORIES ----------------
+  currentAffairsCategories: [
+    "National politics & governance — policy, bills, judgments, appointments",
+    "International relations — bilateral visits, treaties, diplomatic shifts",
+    "Summits & conferences — venue, host, theme, outcomes, India's role",
+    "Awards & honours — Nobel, Bharat Ratna/Padma, sporting/literary awards",
+    "Defence — inductions, exercises, DRDO tests, leadership appointments",
+    "Economy in the news — RBI policy, Budget, financial-sector reforms",
+    "Sports — major tournament winners, records",
+    "Science & tech in the news — launches, tech policy"
+  ],
+
+  // ---------------- CONFIRMED CURRENT EVENTS ANCHORS (2026 cycle) ----------------
+  currentAffairsAnchors: [
+    "BRICS Summit 2026 — India hosted the 18th BRICS Summit in New Delhi (12–13 Sept 2026); India's 4th BRICS chairship (previously 2012, 2016, 2021)",
+    "Raisina Middle East Conference (Jan 2026, Abu Dhabi) — India-Middle East cooperation, IMEC corridor, AI governance",
+    "80th Independence Day (Aug 2026) — theme \"Yuva Shakti: Leading the journey to Viksit Bharat @2047\"; 150 years of Vande Mataram",
+    "23rd Commonwealth Games 2026 — India finished 4th overall",
+    "Arunachal Pradesh's first Ramsar Site designated (2026)",
+    "Defence leadership: General Dhiraj Seth as 31st Army Chief (\"VIJAY\" vision); Air Marshal Ashutosh Dixit as Vice Chief of Air Staff",
+    "Defence hardware: INS Mahendragiri, INS Malvan commissioned; DRDO Pinaka Long Range Guided Rocket flight-test",
+    "FIFA World Cup 2026 and ICC T20 Women's World Cup 2026 held",
+    "India AI Impact Expo 2026 unveiled by PM Modi (Feb 2026)"
+  ],
+
+  // ---------------- WIKIPEDIA CITATION EXAMPLES ----------------
+  wikiExamples: [
+    { topic: "BRICS", focus: "\"Member states\" (current members + accession years) and \"Summits\" table (host/year, last 3). Skip founding history beyond 1 line." },
+    { topic: "A Constitutional Amendment (e.g. 73rd)", focus: "The infobox (date, purpose) and \"Provisions\" section only. Skip \"Background\"/\"Debate\" narrative sections — rarely tested." },
+    { topic: "A government scheme (e.g. PM-Kisan)", focus: "Infobox for launch date + ministry, and \"Eligibility\"/\"Benefits\" section for exact figures. Skip \"Criticism\"/\"Reception\" sections." },
+    { topic: "A Bill in the news", focus: "Search \"[Bill name] India\" — read \"Provisions\" section for what it actually changes. Note current status (passed/pending) since this changes fast." },
+    { topic: "A monument/UNESCO site (e.g. Hoysala temples)", focus: "\"Location\" and \"UNESCO inscription\" sections for exact dates/reasoning. Skip lengthy architectural-style descriptions unless the exam has tested that specific site before." }
+  ],
+
+  // ---------------- NCERT CLASS INDEX ----------------
+  ncertIndex: [
+    { cls: "6", coverage: "History: ancient India (Our Pasts I) · Geography: Earth basics (The Earth Our Habitat) · Civics: Social & Political Life I" },
+    { cls: "7", coverage: "History: medieval India (Our Pasts II) · Geography: physical processes (Our Environment) · Civics: SPL II" },
+    { cls: "8", coverage: "History: colonial/modern India (Our Pasts III) · Geography: resources (Resources & Development) · Civics: Indian Constitution (SPL III)" },
+    { cls: "9", coverage: "History: world context (India & Contemporary World I) · Geography: India physical (Contemporary India I) · Economics basics · Civics: Democratic Politics I" },
+    { cls: "10", coverage: "History: nationalism & INM (India & Contemporary World II) · Geography: resources/agri (Contemporary India II) · Economics: development · Civics: federalism, parties (Democratic Politics II)" },
+    { cls: "11", coverage: "Geography: physical & Indian environment · Political Science: Constitution at Work · Economics: Indian Economic Development" },
+    { cls: "12", coverage: "Political Science: world politics + post-independence India · History: themed volumes · Geography: human geography, India people & economy" }
+  ],
+
+  priorityLegend: [
+    { stars: 3, label: "Set this paper myself, I test this first — confirmed recurring AND explicitly emphasized by the syllabus" },
+    { stars: 2, label: "Solid, regularly-tested ground — confirmed in at least one real paper" },
+    { stars: 1, label: "Standard syllabus coverage — no confirmed repeat yet, but structurally in-scope" }
+  ],
+
+  syllabus: [
+    {
+      id: "p1-ca", paper: "Paper I", section: "Section A",
+      title: "Current Events — National & International",
+      meta: "40 questions, 80 marks", isCurrentAffairs: true, topics: []
+    },
+    {
+      id: "p1-history-ancient", paper: "Paper I", section: "Section B · History",
+      title: "Ancient India",
+      meta: "Emphasis: social, economic, cultural, political aspects",
+      topics: [
+        { name: "Indus Valley — Sites & Town Planning", tags: [{l:"6",k:"ncert"}], desc: "Mature Harappan phase sites — Mohenjo-daro, Harappa, Lothal, Dholavira, Rakhigarhi, Kalibangan; grid town planning, Great Bath, drainage systems, citadel-vs-lower-town layout.", priority: 2,
+          studyTargets: ["Mature phase date range (commonly cited c. 2600–1900 BCE) — verify and lock in", "Site-to-river/region matching: Mohenjo-daro/Harappa (Indus), Lothal/Dholavira (Gujarat), Rakhigarhi/Kalibangan (Ghaggar-Hakra)", "Which site is known for which specific feature — dockyard (Lothal), largest site (Rakhigarhi), water conservation (Dholavira)"] },
+        { name: "Indus Valley — Seals, Script & Trade", tags: [{l:"6",k:"ncert"}], desc: "Steatite seals with animal motifs, undeciphered pictographic script, weights and measures, trade links with Mesopotamia.", priority: 2,
+          studyTargets: ["Seal motifs commonly tested: unicorn, humped bull, pashupati-seal imagery", "Script remains undeciphered — a frequently tested negative fact (don't confuse with claimed decipherments)"] },
+        { name: "Indus Valley — Decline Theories", tags: [{l:"6",k:"ncert"}], desc: "Competing explanations for the civilization's decline — Aryan invasion theory (now largely discounted), climate change/river shift (Ghaggar-Hakra drying), tectonic activity, trade collapse.", priority: 1,
+          studyTargets: ["Know 2-3 competing theories, not just one — questions often test which explanation is NOT currently favoured by scholars"] },
+        { name: "Vedic Age — Early vs Later Vedic", tags: [{l:"6",k:"ncert"}], desc: "Early Vedic (Rigvedic) pastoral-tribal society vs Later Vedic territorial/agricultural transition; political organization — sabha, samiti, rajan.", priority: 1,
+          studyTargets: ["Rigvedic period approximate range (c. 1500–1000 BCE) vs Later Vedic (c. 1000–600 BCE) — relative sequence matters most", "Sabha vs Samiti — distinguish their functions, don't conflate them"] },
+        { name: "Vedic Literature", tags: [{l:"6",k:"ncert"}], desc: "Four Vedas (Rig, Sama, Yajur, Atharva), Brahmanas, Aranyakas, Upanishads — the broad textual layers and their relative chronology.", priority: 1,
+          studyTargets: ["Order of the four Vedas by composition (Rig is earliest) — frequently tested sequencing", "Upanishads as the philosophical/Vedantic layer, composed latest among these"] },
+        { name: "Varna System Origins", tags: [{l:"6",k:"ncert"}], desc: "Emergence and early evolution of the four-fold Varna classification in Later Vedic society.", priority: 1 },
+        { name: "Buddhism — Founder & Core Teachings", tags: [{l:"6",k:"ncert"}], desc: "Gautama Buddha's life, Four Noble Truths, Eightfold Path, concept of Nirvana, rejection of Vedic ritualism and caste.", priority: 2,
+          studyTargets: ["Buddha's approximate dates (birth/enlightenment/death) — commonly-cited range, not a single disputed year"] },
+        { name: "Buddhist Councils", tags: [{l:"6",k:"ncert"}], desc: "All four Buddhist Councils — host ruler, location, and key outcome of each (1st Council compiled teachings; 4th Council split Hinayana/Mahayana under Kanishka).", priority: 3, recurring: true,
+          studyTargets: ["All 4 Councils in order with host ruler/location each — this exact list has real PYQ precedent; drill it as a sequence"] },
+        { name: "Jainism — Principles & Sects", tags: [{l:"6",k:"ncert"}], desc: "Mahavira's teachings, Ratnatraya (Three Jewels), Ahimsa, Digambara vs Svetambara sect split.", priority: 1,
+          studyTargets: ["Mahavira's dates relative to Buddha (near-contemporary) — sequence, not exact year"] },
+        { name: "Mahajanapadas & the Rise of Magadha", tags: [{l:"6",k:"ncert"}], desc: "The sixteen Mahajanapadas and how Magadha rose to dominance before the Mauryas.", priority: 2 },
+        { name: "Mauryan Empire — Chandragupta & Chanakya", tags: [{l:"6",k:"ncert"}], desc: "Chandragupta Maurya's rise, Chanakya's Arthashastra, administrative structure, Megasthenes' account (Indica).", priority: 2,
+          studyTargets: ["Chandragupta Maurya's accession year (commonly c. 322 BCE) relative to Alexander's invasion (326 BCE)"] },
+        { name: "Ashoka — Edicts & Dhamma", tags: [{l:"6",k:"ncert"}], desc: "Ashoka's Rock and Pillar Edicts, the Kalinga War and its aftermath, the policy of Dhamma, spread of Buddhism under his patronage.", priority: 3, studyTargets: ["Ashoka's accession and Kalinga War year (commonly c. 261 BCE) — genuine memorization priority, frequently anchors questions", "Order of Mauryan rulers: Chandragupta → Bindusara → Ashoka"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "The Rummindei Inscription is listed among the History topics reported for this paper" }] },
+        { name: "Satavahanas & the Deccan", tags: [{l:"6",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Post-Mauryan Deccan polity: Satavahana administration, trade and patronage.", priority: 2,
+          studyTargets: ["Satavahana and Chola administration were flagged in the earlier paper analysis as a recurring theme — keep the administrative structure clear"] },
+        { name: "Sangam Age & Early South Indian Kingdoms", tags: [{l:"6",k:"ncert"}], desc: "Sangam literature and the early Chera, Chola and Pandya kingdoms of the far South.", priority: 2 },
+        { name: "Gupta Age — Golden Age Achievements", tags: [{l:"6",k:"ncert"}], desc: "Advances in science, mathematics (Aryabhata), art, and literature (Kalidasa) under Gupta patronage; the \"Golden Age\" characterization.", priority: 2,
+          studyTargets: ["Gupta era starting year (commonly 319-320 CE) as a reference anchor"] },
+        { name: "Samudragupta & the Allahabad Pillar Inscription", tags: [{l:"6",k:"ncert"}], desc: "Samudragupta's military conquests as recorded in the Allahabad Pillar Inscription (Prashasti), composed by Harishena.", priority: 3, recurring: true,
+          studyTargets: ["CONFIRMED tested — composer (Harishena) and what the inscription lists (conquered kings/regions); prioritize this over other Gupta facts"] },
+        { name: "Chandragupta II & the Navaratnas", tags: [{l:"6",k:"ncert"}], desc: "Chandragupta II's title \"Vikramaditya,\" his court's association with the Navaratnas (Nine Gems), including Kalidasa.", priority: 1 },
+        { name: "Harshavardhana & the Post-Gupta Period", tags: [{l:"7",k:"ncert"}], desc: "Harshavardhana's empire and the political fragmentation that followed the Guptas.", priority: 1 },
+        { name: "Kadambas of Banavasi", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Founder Mayurasharma, capital at Banavasi — the earliest indigenous Karnataka dynasty.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Prioritize founder-capital pairing (Mayurasharma–Banavasi) over exact founding year"] },
+        { name: "Western Gangas of Talakadu", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Western Ganga dynasty's capital(s) and regional territory in southern Karnataka.", priority: 2, karnataka: true },
+        { name: "Chalukyas of Badami", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Founder Pulakeshin I; Pulakeshin II's confrontation with Harshavardhana; Badami cave temples.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Founder (Pulakeshin I) and Pulakeshin II's confrontation with Harshavardhana — sequence and achievement matter most"] },
+        { name: "Ancient Literature, Education & Science", tags: [{l:"6",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Sanskrit literature, centres of learning and the achievements of ancient Indian science.", priority: 1 },
+        { name: "Ancient Art & Architecture", tags: [{l:"DEGREE",k:"degree"}], desc: "Rock-cut architecture, early temple styles across ancient India.", priority: 1 },
+        { name: "Ajanta Caves & Ancient Painting", tags: [{l:"DEGREE",k:"degree"}], desc: "The Ajanta frescoes and the tradition of ancient Indian painting.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Ajanta Paintings are listed among the History topics reported for this paper" }] },
+        { name: "Temple Architecture Styles", tags: [{l:"DEGREE",k:"degree"}], desc: "Nagara (North Indian), Dravida (South Indian), and Vesara (hybrid, Deccan/Karnataka) temple architectural styles.", priority: 2, karnataka: true,
+          studyTargets: ["Vesara is the Karnataka-relevant hybrid style — prioritize understanding what distinguishes it from pure Nagara/Dravida"] },
+        { name: "Earliest Kannada Inscriptions", tags: [{l:"DEGREE",k:"degree"}], desc: "Earliest attested Kannada-language inscriptions and their significance for the antiquity of the Kannada language.", priority: 2, karnataka: true,
+          studyTargets: ["Earliest attested Kannada inscription (commonly cited: Halmidi inscription) — verify current scholarly consensus"] }
+      ]
+    },
+    {
+      id: "p1-history-medieval", paper: "Paper I", section: "Section B · History",
+      title: "Medieval India",
+      meta: "Vijayanagara & Hoysala carry high Karnataka-specific weight",
+      topics: [
+        { name: "Delhi Sultanate — Five Dynasties", tags: [{l:"7",k:"ncert"}], desc: "The Slave/Mamluk, Khilji, Tughlaq, Sayyid and Lodi dynasties.", priority: 1,
+          studyTargets: ["Order of the five dynasties: Slave/Mamluk → Khilji → Tughlaq → Sayyid → Lodi — sequence is the priority"] },
+        { name: "Alauddin Khilji & Muhammad bin Tughlaq — Reforms", tags: [{l:"7",k:"ncert"}], desc: "Administrative and economic innovations under the two best-known Sultans.", priority: 1,
+          studyTargets: ["Alauddin Khilji's market reforms and Muhammad bin Tughlaq's token currency/capital shift — most commonly tested specifics"] },
+        { name: "Delhi Sultanate — Administration & Economy", tags: [{l:"7",k:"ncert"}], desc: "The iqta system, land revenue and the administrative structure of the Sultanate.", priority: 1 },
+        { name: "Delhi Sultanate — Architecture & Culture", tags: [{l:"7",k:"ncert"}], desc: "Indo-Islamic architecture of the Sultanate period, including the Qutb complex, and the early Bhakti movement's backdrop.", priority: 1 },
+        { name: "Pallavas & Pandyas", tags: [{l:"7",k:"ncert"}], desc: "The Pallavas of Kanchi and the Pandyas of Madurai, and their contributions to art and architecture.", priority: 1 },
+        { name: "Cholas — Administration & Temples", tags: [{l:"7",k:"ncert"}], desc: "Chola administration, including village-level self-government, and Chola temple architecture.", priority: 2,
+          studyTargets: ["Satavahana and Chola administration were flagged in the earlier paper analysis as a recurring theme — know the village self-government arrangements (the Uttaramerur inscriptions are the standard evidence)"] },
+        { name: "Rashtrakutas — Manyakheta & Kannada Literature", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The Rashtrakuta dynasty of Manyakheta, its rulers, and its patronage of Kannada literature including the Kavirajamarga.", priority: 2, karnataka: true },
+        { name: "Chalukyas of Kalyani (Western Chalukyas)", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The Western Chalukyas of Kalyani and their contributions to art, architecture and literature.", priority: 2, karnataka: true },
+        { name: "Vijayanagara — Founding & Rulers", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Harihara and Bukka's founding of the empire (1336) and the succession of dynasties and rulers.", priority: 3, karnataka: true },
+        { name: "Krishnadevaraya — Reign & Literature", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The empire at its height, and Krishnadevaraya's patronage of literature.", priority: 3, karnataka: true,
+          studyTargets: ["Krishnadevaraya's reign span and achievements (Amuktamalyada authorship, Ashtadiggajas patronage)"] },
+        { name: "Battle of Talikota (1565)", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The battle that ended Vijayanagara's power, and the ruler at the time.", priority: 3, recurring: true, karnataka: true,
+          pyq: [{ year: "2017", ref: "Paper I, Q21", note: "Identify the Vijayanagara ruler at the time of the Battle of Talikota" }],
+          studyTargets: ["Battle of Talikota year (commonly cited 1565) — CONFIRMED directly tested, a must-lock date", "Ruler at Talikota (Rama Raya / Aliya Rama Raya) — CONFIRMED PYQ answer target"] },
+        { name: "Foreign Travellers to Vijayanagara", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Accounts of Vijayanagara by visiting travellers, matched to the rulers they visited.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Foreign travellers matched to visiting ruler: Domingo Paes/Duarte Barbosa → Krishnadevaraya's era, Niccolò de' Conti/Abdur Razzaq → earlier rulers — CONFIRMED tested as matching format"] },
+        { name: "Vijayanagara — Administration, Economy & Society", tags: [{l:"DEGREE",k:"degree"}], desc: "The Nayaka system, revenue administration, trade and society under Vijayanagara.", priority: 2, karnataka: true },
+        { name: "Vijayanagara Art & Architecture — Hampi", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The temples and monuments of Hampi and the empire's artistic and literary patronage.", priority: 2, karnataka: true },
+        { name: "Bahmani Kingdom", tags: [{l:"DEGREE",k:"degree"}], desc: "Formation of the Bahmani Kingdom, its conflict with Vijayanagara, and Mahmud Gawan's role.", priority: 1, karnataka: true,
+          studyTargets: ["Bahmani Kingdom founding (commonly 1347) relative to Vijayanagara founding (1336) — near-simultaneous sequence"] },
+        { name: "The Five Deccan Sultanates", tags: [{l:"DEGREE",k:"degree"}], desc: "The successor states of the Bahmani Kingdom and Deccan cultural syncretism.", priority: 1,
+          studyTargets: ["The five Deccan Sultanates: Bijapur, Golconda, Ahmadnagar, Berar, Bidar — names matter more than exact split years"] },
+        { name: "Adil Shahis of Bijapur — Literature & Architecture", tags: [{l:"DEGREE",k:"degree"}], desc: "The Adil Shahi contribution to literature and architecture in the Deccan.", priority: 2, karnataka: true },
+        { name: "Mughal Rulers & Sequence", tags: [{l:"7",k:"ncert"}], desc: "Babur to Aurangzeb and the order of succession. Wiki focus: reign-by-reign table for quick recall.", priority: 2,
+          studyTargets: ["Order: Babur → Humayun → Akbar → Jahangir → Shah Jahan → Aurangzeb"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Mina Bazar (Humayun, Akbar, Shah Jahan) is listed among the History topics reported for this paper" }] },
+        { name: "First & Second Battles of Panipat", tags: [{l:"7",k:"ncert"}], desc: "The two battles that opened and re-established Mughal rule.", priority: 2,
+          studyTargets: ["First Battle of Panipat (1526, Babur) and Second Battle of Panipat (1556, Akbar vs Hemu) — prioritize both exact years"] },
+        { name: "Akbar's Policies & Mansabdari", tags: [{l:"7",k:"ncert"}], desc: "Akbar's religious, administrative and revenue policies, and the mansabdari system.", priority: 2,
+          studyTargets: ["Akbar's key policies (Din-i-Ilahi, Mansabdari, jizya abolition) — attribute correctly to Akbar specifically"] },
+        { name: "Aurangzeb & the Decline of the Mughal Empire", tags: [{l:"7",k:"ncert"}], desc: "The later Mughal period and the causes of the empire's decline.", priority: 1 },
+        { name: "Marathas & Shivaji", tags: [{l:"7",k:"ncert"}], desc: "Shivaji's rise and the Maratha state.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Shivaji is listed among the History topics reported for this paper" }] },
+        { name: "Mughal Art, Architecture & Painting", tags: [{l:"DEGREE",k:"degree"}], desc: "Mughal architecture, painting schools and music.", priority: 1 },
+        { name: "Bhakti Saints — Namdev, Kabir & Ravidas", tags: [{l:"7",k:"ncert"}], desc: "The Bhakti saints and the professions associated with each. Recurring: Namdev/Kabir/Ravidas professions tested.", priority: 3, recurring: true,
+          pyq: [{ year: "2017", ref: "Paper I, Q79", note: "Match professions associated with Namdev, Kabir and Ravidas" }],
+          studyTargets: ["Namdev (tailor/calico-printer), Kabir (weaver), Ravidas (cobbler/leather-worker) — CONFIRMED exact profession-to-saint pairing"] },
+        { name: "Basavanna & the Lingayat/Veerashaiva Movement", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Basavanna and the Lingayat movement, including the Vachana tradition.", priority: 3, karnataka: true,
+          studyTargets: ["Basavanna's century (12th) and Lingayat/Veerashaiva movement founding in Karnataka — highest-value Karnataka Bhakti figure"] },
+        { name: "Chaitanya & Vaishnava Bhakti", tags: [{l:"7",k:"ncert"}], desc: "Chaitanya and the Vaishnava Bhakti tradition.", priority: 1 },
+        { name: "Sufi Movement & Sufi Orders", tags: [{l:"7",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The Sufi orders and their influence, including the Sufis of Karnataka.", priority: 2, karnataka: true },
+        { name: "Haridasa Movement", tags: [{l:"DEGREE",k:"degree"}], desc: "The Haridasa devotional movement of Karnataka.", priority: 2, karnataka: true },
+        { name: "Hoysala Dynasty & Span", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The Hoysala dynasty's rise, rulers and period.", priority: 2, karnataka: true,
+          studyTargets: ["Hoysala span (commonly 11th–14th century) and relation to Vesara style"] },
+        { name: "Hoysala Temples & UNESCO World Heritage", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Belur, Halebidu architecture. Directly tested via UNESCO World Heritage (Sacred Ensembles of the Hoysalas) — very high priority.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["The three UNESCO-listed sites: Belur (Chennakeshava), Halebidu (Hoysaleshvara), Somanathapura (Keshava) — CONFIRMED tested, know all three exactly", "Year of UNESCO inscription (2023) and India's World Heritage count at that point — track as it updates"] },
+        { name: "Wodeyars of Mysore", tags: [{l:"DEGREE",k:"degree"}], desc: "Medieval Karnataka regional polity: the Wodeyar dynasty.", priority: 1, karnataka: true,
+          studyTargets: ["Wodeyar dynasty's founding period and relation to post-Vijayanagara power vacuum in Mysore"] },
+        { name: "Keladi & Chitradurga Nayakas", tags: [{l:"DEGREE",k:"degree"}], desc: "The Keladi and Chitradurga Nayakas, regional polities of the post-Vijayanagara period.", priority: 1, karnataka: true,
+          studyTargets: ["Keladi Nayakas' core territory (Malnad/coastal Karnataka)"] }
+      ]
+    },
+    {
+      id: "p1-history-modern", paper: "Paper I", section: "Section B · History",
+      title: "Modern India & National Movement",
+      meta: "Highest-weightage History sub-area — explicit Karnataka emphasis in syllabus",
+      topics: [
+        { name: "European Trading Companies & Carnatic Wars", tags: [{l:"8",k:"ncert"}], desc: "Arrival of the Portuguese, Dutch, French and British; the East India Company's formation, charters and early factories; the Anglo-French Carnatic Wars.", priority: 2,
+          studyTargets: ["Order of European arrival and which power lost out to which — the Anglo-French rivalry is the thread connecting the Carnatic Wars"] },
+        { name: "Plassey (1757), Buxar (1764) & the Treaty of Allahabad", tags: [{l:"8",k:"ncert"}], desc: "The two battles that established Company power in eastern India, and the 1765 settlement that followed Buxar.", priority: 3, 
+          studyTargets: ["Battle of Plassey (1757) and Battle of Buxar (1764) — get both exact years, plus which came first and why Buxar mattered more constitutionally", "Treaty of Allahabad (1765): what the Company obtained after Buxar (the Diwani) — know it as a fact, not just the date"] },
+        { name: "Subsidiary Alliance & Doctrine of Lapse", tags: [{l:"8",k:"ncert"}], desc: "The two main instruments of territorial expansion and indirect control over Indian states.", priority: 2,
+          studyTargets: ["Subsidiary Alliance (Wellesley) vs Doctrine of Lapse (Dalhousie) — attribute each policy to its Governor-General correctly"] },
+        { name: "Anglo-Mysore Wars & the Fall of Tipu Sultan", tags: [{l:"DEGREE",k:"degree"}], desc: "Hyder Ali and Tipu Sultan's resistance to the Company and the Mysore Wars that ended with Tipu's defeat in 1799.", priority: 3, karnataka: true,
+          studyTargets: ["Know the sequence and outcome of the four Anglo-Mysore wars (1767–1799, commonly cited) as one connected narrative", "Tipu Sultan appears by name in every KEA-family Karnataka History list as well as the KAS Mains syllabus — treat this as high-overlap material"] },
+        { name: "Colonial Economic Policy — Land Revenue & Drain of Wealth", tags: [{l:"8",k:"ncert"}], desc: "Permanent Settlement, Ryotwari and Mahalwari land-revenue systems; the drain of wealth, deindustrialization and recurring famines.", priority: 2,
+          studyTargets: ["Match each land-revenue system to the type of region/tenure it covered", "Keep 'drain of wealth' as an argument you can state in two sentences, not just a term"] },
+        { name: "1857 Revolt — Causes", tags: [{l:"8",k:"ncert"}], desc: "Political, economic, social-religious and military causes of the 1857 uprising.", priority: 2,
+          studyTargets: ["1857 as the exact year; separate the causes into political / economic / social-religious / military so you can sort a given statement into the right group"] },
+        { name: "1857 Revolt — Leaders & Regions", tags: [{l:"8",k:"ncert"}], desc: "Major centres of the revolt and the leaders associated with each.", priority: 2,
+          studyTargets: ["Leaders matched to region: Mangal Pandey (Barrackpore), Bahadur Shah Zafar (Delhi), Rani Lakshmibai (Jhansi), Tantia Tope/Nana Sahib (Kanpur)"] },
+        { name: "1857 Revolt — Suppression & Government of India Act 1858", tags: [{l:"8",k:"ncert"}], desc: "Suppression of the revolt and the transfer of power from the Company to the Crown.", priority: 2,
+          studyTargets: ["GoI Act 1858 as the direct constitutional consequence (Crown takeover) — the cause-to-consequence link matters more than individual battle details"] },
+        { name: "Brahmo Samaj & Raja Rammohan Roy", tags: [{l:"8",k:"ncert"}], desc: "Rammohan Roy's reform agenda and the Brahmo Samaj.", priority: 3, recurring: true,
+          studyTargets: ["Brahmo Samaj (Raja Rammohan Roy, 1828) — founder and year exact; reformer-to-cause matching is a recurring format"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Raja Ram Mohan Roy is listed among the History topics reported for this paper" }] },
+        { name: "Arya Samaj & Dayananda Saraswati", tags: [{l:"8",k:"ncert"}], desc: "Dayananda's call to return to the Vedas and the Arya Samaj's social programme.", priority: 3, recurring: true,
+          studyTargets: ["Arya Samaj (Dayananda Saraswati, 1875) — founder and year exact; keep it distinct from the Brahmo Samaj in matching questions"] },
+        { name: "Aligarh Movement & Sir Syed Ahmad Khan", tags: [{l:"8",k:"ncert"}], desc: "The modern-education movement among Muslims led by Sir Syed Ahmad Khan.", priority: 2,
+          studyTargets: ["Aligarh Movement (Sir Syed Ahmad Khan) and its core educational objective"] },
+        { name: "Ramakrishna Mission & Other Reform Currents", tags: [{l:"8",k:"ncert"}], desc: "The Ramakrishna Mission and the wider range of socio-religious reform movements of the nineteenth century.", priority: 1 },
+        { name: "INC Foundation & the Moderate Phase", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "Foundation of the Indian National Congress and the early Moderate phase of petition and constitutional agitation.", priority: 2,
+          studyTargets: ["INC founding (1885) as the anchor date for the whole movement's periodization"] },
+        { name: "Extremist Phase, Swadeshi & the Surat Split", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "Partition of Bengal and the Swadeshi movement, the Extremist turn, and the Congress split at Surat.", priority: 2,
+          studyTargets: ["Moderate-Extremist split (Surat Split, 1907) and the Partition of Bengal (1905) as its backdrop"] },
+        { name: "Home Rule Movement", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "The Home Rule Leagues of the First World War period.", priority: 1 },
+        { name: "Early Gandhian Satyagrahas — Champaran, Kheda & Ahmedabad Mill Strike", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "Gandhi's first satyagrahas in India, including the Ahmedabad Mill Strike (1918).", priority: 2,
+          studyTargets: ["Ahmedabad Mill Strike (1918): its cause, Anusuya Sarabhai's role and Gandhi's fast"] },
+        { name: "Non-Cooperation, Civil Disobedience & Quit India", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "The three mass movements of the Gandhian era.", priority: 3, recurring: true,
+          studyTargets: ["Non-Cooperation (1920-22), Civil Disobedience/Salt March (1930), Quit India (1942) — get all three start years exact"] },
+        { name: "Revolutionary Movement, Subhas Chandra Bose & the INA", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "Revolutionary nationalism, including women revolutionaries and Madam Bhikaji Cama, and Subhas Chandra Bose's Indian National Army.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Madam Bhikaji Cama is listed among the History topics reported for this paper" }] },
+        { name: "Wartime Proposals & Missions (1940–46)", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "The sequence of British constitutional proposals between the outbreak of the Second World War and Independence.", priority: 3, recurring: true,
+          studyTargets: ["CONFIRMED sequence: August Offer (1940) → Cripps Mission (1942) → Simla Conference (1945) → Cabinet Mission (1946) — drill as a sequence, real PYQ precedent", "Gandhi's remark that the Cripps proposals were a 'post-dated cheque on a crashing bank' is the standard quote associated with that mission"],
+          pyq: [{ year: "2017", ref: "Paper I, Q15", note: "Arrange August Offer, Simla Conference, Cripps Mission and Cabinet Mission chronologically" }] },
+        { name: "Communal Politics — Separate Electorates & the Lahore Resolution", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"}], desc: "Separate electorates under the 1909 reforms and the Lahore Resolution (1940) as markers of the growth of communal politics.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Lahore Resolution (1940) is listed among the History topics reported for this paper" }] },
+        { name: "Kittur Rani Chennamma & Sangolli Rayanna", tags: [{l:"DEGREE",k:"degree"}], desc: "The Kittur revolt against the Company and Sangolli Rayanna's guerrilla resistance.", priority: 3, recurring: true, karnataka: true, highPriority: true,
+          studyTargets: ["Kittur Rani Chennamma's revolt (1824) and Sangolli Rayanna as army commander — CONFIRMED exact pairing, likely the single highest-ROI fact in Karnataka History", "At KAS Mains depth, add the causes and consequences of the Kittur uprising, not just the names"],
+          pyq: [{ year: "2017", ref: "Paper I, Q25", note: "Identify the guerrilla fighter who served as commander of Rani Chennamma's army (Sangolli Rayanna)" }] },
+        { name: "Early Armed Resistance in Karnataka — Nagar Revolt & Halagali Bedas", tags: [{l:"DEGREE",k:"degree"}], desc: "Armed rebellions against British rule in the Karnataka region, including the Nagar uprising and the Halagali Bedas.", priority: 2, karnataka: true,
+          studyTargets: ["Halagali Bedas is named in the KEA-family source syllabus, and the Nagar Revolt appears in the Adda247 topic list for the Dec 2024 paper — research both specifically, they are easy to overlook next to Kittur"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Nagar Revolt is listed among the History topics reported for this paper" }] },
+        { name: "Dandi March & Salt Satyagraha in Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's participation in Gandhi's Dandi March and the Salt Satyagraha.", priority: 3, recurring: true, karnataka: true,
+          pyq: [{ year: "2017", ref: "Paper I, Q49", note: "Identify the Karnataka participant in Gandhi's Dandi March" }] },
+        { name: "Shivapura Flag Satyagraha (1938)", tags: [{l:"DEGREE",k:"degree"}], desc: "The KPCC flag satyagraha at Shivapura.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Shivapura Flag Satyagraha (1938) — who presided (confirmed PYQ target)"],
+          pyq: [{ year: "2017", ref: "Paper I, Q92", note: "Identify who presided over the KPCC Flag Satyagraha at Shivapura" }] },
+        { name: "Vidurashwatha & Isuru", tags: [{l:"DEGREE",k:"degree"}], desc: "Two Karnataka episodes of the Quit India period that are frequently confused with each other.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Vidurashwatha incident and Isuru's \"Chalo Congress\" episode — both confirmed tested; verify exact years and what distinguishes each (Vidurashwatha = firing incident; Isuru = parallel government episode), they're often confused"],
+          pyq: [{ year: "2024 (Dec)", ref: "Paper I, Q99-100", note: "Karnataka women freedom fighters; dates/events of Salt Satyagraha, Shivapura Dhwaja Satyagraha, Vidurashwatha, Isuru" }] },
+        { name: "Karnataka's Women Freedom Fighters", tags: [{l:"DEGREE",k:"degree"}], desc: "Women freedom fighters from Karnataka and the places they are associated with.", priority: 2, karnataka: true,
+          pyq: [{ year: "2024 (Dec)", ref: "Paper I, Q99-100", note: "Karnataka women freedom fighters; dates/events of Salt Satyagraha, Shivapura Dhwaja Satyagraha, Vidurashwatha, Isuru" }] },
+        { name: "Princely Mysore — Reform Committees & Politics", tags: [{l:"DEGREE",k:"degree"}], desc: "Political and administrative developments in princely Mysore, including the Miller Committee on public employment.", priority: 2, karnataka: true,
+          studyTargets: ["Miller Committee (1918) is also named in the KAS Mains syllabus — one fact worth knowing at both levels"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "'Political Economy of Indirect Rule in Mysore (1881-1971)' is listed among the History topics reported for this paper" }] },
+        { name: "Commissioner's Rule, Hyderabad-Karnataka & the Dewans", tags: [{l:"DEGREE",k:"degree"}], desc: "Krishnaraja Wodeyar III, the Commissioner's Rule (1831–1881), the Nizam's rule over Hyderabad-Karnataka and its freedom movement, and the progress of Mysore under the Dewans.", priority: 2, karnataka: true },
+        { name: "Education, Press & Social Reform in Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Spread of education by missionary and voluntary bodies, the press, new genres in Kannada literature and the Backward Class movement.", priority: 1, karnataka: true },
+        { name: "Unification of Karnataka (Ekikarana)", tags: [{l:"DEGREE",k:"degree"}], desc: "The movement for a unified Kannada-speaking state and the States Reorganisation of 1956.", priority: 3, recurring: true, karnataka: true, highPriority: true,
+          studyTargets: ["Ekikarana (Unification): 1 November 1956 States Reorganisation date, plus 2-3 key campaigning figures (Alur Venkatrao is the name the KAS Mains syllabus gives)", "States Reorganisation Commission (1953): Fazl Ali (chair) with K. M. Panikkar and H. N. Kunzru — know the composition"] },
+        { name: "Early Constitutional Acts (1773–1858)", tags: [{l:"8",k:"ncert"},{l:"9",k:"ncert"}], desc: "From the Regulating Act through the Charter Acts to the Government of India Act 1858.", priority: 2,
+          studyTargets: ["Sequence with years: Regulating Act (1773) → Pitt's India Act (1784) → Charter Acts (1813/1833/1853) → GoI Act 1858"] },
+        { name: "Indian Councils Acts & Government of India Acts (1861–1935)", tags: [{l:"8",k:"ncert"},{l:"9",k:"ncert"}], desc: "Indian Councils Acts of 1861/1892/1909, the Montagu-Chelmsford reforms of 1919 and the Government of India Act 1935.", priority: 3, 
+          studyTargets: ["1909 (separate electorates), 1919 (dyarchy) and 1935 (federal structure) are the individually most-tested provisions"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Morley-Minto Reforms (1909) is listed under History and the Indian Statutory Commission (Simon Commission) under Polity" }] },
+        { name: "Mountbatten Plan & Independence", tags: [{l:"8",k:"ncert"}], desc: "The final transfer-of-power plan and the Partition.", priority: 2,
+          studyTargets: ["Mountbatten Plan (June 1947) and Independence (15 Aug 1947) — compressed timeline between the two"] },
+        { name: "Integration of the Princely States", tags: [{l:"8",k:"ncert"}], desc: "Sardar Patel's role in integrating the princely states and the special cases among them.", priority: 2,
+          studyTargets: ["Patel's integration role; special cases — Hyderabad (Operation Polo), Junagadh, Kashmir (Instrument of Accession)"] }
+      ]
+    },
+    {
+      id: "p1-culture", paper: "Paper I", section: "Section B · History & Culture",
+      title: "Art, Culture & Heritage",
+      meta: "Syllabus: history 'in its social, economic, cultural and political aspects' — with special emphasis on Karnataka",
+      topics: [
+        { name: "Indian Classical Dance Forms", tags: [{l:"11",k:"ncert"}], desc: "The eight classical dance forms (Bharatanatyam, Kathak, Kathakali, Kuchipudi, Odissi, Manipuri, Mohiniyattam, Sattriya) and the region of each.", priority: 2 },
+        { name: "Indian Classical Music", tags: [{l:"11",k:"ncert"}], desc: "The Hindustani and Carnatic traditions.", priority: 2 },
+        { name: "Indian Painting Traditions", tags: [{l:"DEGREE",k:"degree"}], desc: "Ajanta frescoes and the Mughal and Rajput schools of painting.", priority: 1 },
+        { name: "Churches & Colonial Architecture", tags: [{l:"DEGREE",k:"degree"}], desc: "Cathedral architecture such as Bom Jesus (Old Goa), St Paul's (Kolkata) and St Thomas (Chennai).", priority: 1 },
+        { name: "Religions of India", tags: [{l:"DEGREE",k:"degree"}], desc: "Hinduism, Jainism, Buddhism, Christianity, Islam and Sikhism: principles, sects and practices.", priority: 1 },
+        { name: "Indian Festivals, Fairs & Folk Arts", tags: [{l:"DEGREE",k:"degree"}], desc: "Festivals, fairs, pilgrimages and folk arts across India.", priority: 1 },
+        { name: "UNESCO World Heritage Sites in India", tags: [{l:"DEGREE",k:"degree"}], desc: "India's World Heritage sites and recent additions.", priority: 2, recurring: true,
+          studyTargets: ["UNESCO World Heritage additions are flagged as a recurring category in the original analysis — track the current count and the latest inscriptions"] },
+        { name: "Karnataka's UNESCO World Heritage Sites", tags: [{l:"DEGREE",k:"degree"}], desc: "Hampi, Pattadakal, the Western Ghats and the Sacred Ensembles of the Hoysalas.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Know each Karnataka site with its dynasty and region; the Hoysala Sacred Ensembles were the most recent addition covered in the Medieval section"] },
+        { name: "Kannada Language & Early Literature", tags: [{l:"DEGREE",k:"degree"}], desc: "The antiquity of Kannada, the Kavirajamarga, and the early poets Pampa, Ponna and Ranna.", priority: 2, karnataka: true },
+        { name: "Vachana & Medieval Kannada Literature", tags: [{l:"DEGREE",k:"degree"}], desc: "The Vachana movement (Basavanna, Akka Mahadevi, Allama Prabhu) and the Haridasa literary tradition.", priority: 2, karnataka: true },
+        { name: "Modern Kannada Literature & Jnanpith Laureates", tags: [{l:"DEGREE",k:"degree"}], desc: "Modern Kannada writers such as Kuvempu and Shivaram Karanth, and the Kannada writers honoured with the Jnanpith Award.", priority: 2, karnataka: true },
+        { name: "Karnataka Folk Arts & Performing Traditions", tags: [{l:"DEGREE",k:"degree"}], desc: "Yakshagana, Dollu Kunitha, Veeragase, Kamsale and other folk traditions of Karnataka.", priority: 2, karnataka: true },
+        { name: "Karnataka Music & the Haridasa Tradition", tags: [{l:"DEGREE",k:"degree"}], desc: "Carnatic music in Karnataka and the Haridasa composers, including Purandara Dasa.", priority: 1, karnataka: true },
+        { name: "Karnataka Festivals & Traditions", tags: [{l:"DEGREE",k:"degree"}], desc: "The Mysuru Dasara, Kambala and other festivals and traditions of Karnataka.", priority: 1, karnataka: true },
+        { name: "Museums, Gazetteers & Archives of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Museums, archives and gazetteers of Karnataka and the work of the Archaeological Survey of India in protecting monuments.", priority: 1, karnataka: true },
+      ]
+    },
+    {
+      id: "p1-geo-world-india", paper: "Paper I", section: "Section B · Geography",
+      title: "World & India Geography",
+      meta: "\"World Geography and Geography of India with a focus on Karnataka\"",
+      topics: [
+        { name: "Continents, Oceans & Major Physical Features", tags: [{l:"6",k:"ncert"}], desc: "The continents and oceans, and their principal mountains, rivers, deserts and grasslands.", priority: 1 },
+        { name: "Latitude, Longitude, Seasons & the Sun's Position", tags: [{l:"6",k:"ncert"},{l:"11",k:"ncert"}], desc: "Earth's rotation and revolution, latitude and longitude, the cause of seasons, and how the Sun's overhead position shifts through the year.", priority: 2,
+          studyTargets: ["Know the Tropic of Capricorn/Cancer and Equator in terms of which date the Sun is overhead"] },
+        { name: "Earth's Interior & Plate Tectonics", tags: [{l:"11",k:"ncert"}], desc: "Structure of the Earth and the movement of plates.", priority: 2 },
+        { name: "Earthquakes & Seismic Waves", tags: [{l:"11",k:"ncert"}], desc: "Earthquake depth, the lithosphere, and the characteristics of seismic waves.", priority: 2 },
+        { name: "Volcanoes & Volcanic Landforms", tags: [{l:"11",k:"ncert"}], desc: "Intrusive volcanic forms: sills, dykes, laccoliths and batholiths.", priority: 2, 
+          studyTargets: ["Match each intrusive form to its shape and relation to the surrounding rock layers — this is a definitions-matching question"] },
+        { name: "Types of Mountains", tags: [{l:"11",k:"ncert"}], desc: "Fold, block, volcanic and residual mountains and examples of each.", priority: 2 },
+        { name: "Karst Topography", tags: [{l:"11",k:"ncert"}], desc: "Landforms of limestone regions — stalactites, stalagmites, uvalas and dolines.", priority: 3, recurring: true,
+          studyTargets: ["Study the process of formation, not only the names"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Karst topography is listed among the Geography topics reported for this paper" }] },
+        { name: "Wind Erosion & Deposition Landforms", tags: [{l:"11",k:"ncert"}], desc: "Landforms made by wind: which are erosional and which are depositional.", priority: 3, recurring: true,
+          studyTargets: ["Sort each landform into erosional or depositional"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Landforms formed by wind deposition are listed among the Geography topics reported for this paper" }] },
+        { name: "Glacial Landforms & Terminology", tags: [{l:"11",k:"ncert"}], desc: "Deposits and landforms of glaciers, such as kame terraces, and the related terminology.", priority: 2 },
+        { name: "Coastal Landforms & Coast Types", tags: [{l:"11",k:"ncert"}], desc: "Coasts of emergence and submergence and the features of each.", priority: 2 },
+        { name: "Atmosphere — Layers & Composition", tags: [{l:"11",k:"ncert"}], desc: "Layers of the atmosphere, the homosphere and heterosphere, and the ozone layer.", priority: 3,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Atmosphere layers are listed among the Geography topics reported for this paper" }] },
+        { name: "Winds, Pressure Belts & Local Winds", tags: [{l:"11",k:"ncert"}], desc: "Planetary winds, pressure belts and local winds.", priority: 2 },
+        { name: "Polar Vortex, Jet Streams & ENSO", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The polar vortex and jet streams, and the El Niño–Southern Oscillation.", priority: 2 },
+        { name: "Climate Types — Savanna & Sudan", tags: [{l:"11",k:"ncert"}], desc: "Characteristics and distribution of the Savanna (Sudan-type) climate.", priority: 2, 
+          studyTargets: ["Know its rainfall pattern, vegetation and where it occurs"] },
+        { name: "World Climate Regions & Biomes", tags: [{l:"11",k:"ncert"}], desc: "The broad climatic types of the world and the natural vegetation of each.", priority: 2 },
+        { name: "World Population — Distribution & Demographic Transition", tags: [{l:"12",k:"ncert"}], desc: "Where people live, population change, density, sex ratio, life expectancy, literacy and migration.", priority: 1 },
+        { name: "Ocean Currents & Their Effects", tags: [{l:"11",k:"ncert"}], desc: "Warm and cold currents and their influence on Indian coasts and fisheries.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Cold currents are listed among the Geography topics reported for this paper" }] },
+        { name: "Political Geography — Borders & Neighbours", tags: [{l:"DEGREE",k:"degree"}], desc: "Land borders of countries that regularly appear in the news.", priority: 3, 
+          studyTargets: ["Learn each country's neighbours from a map rather than from a list of names"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Iran's borders are listed among the Geography topics reported for this paper" }] },
+        { name: "World Minerals & Coal", tags: [{l:"10",k:"ncert"}], desc: "Leading producers of minerals worldwide, and coal deposits by country.", priority: 2, recurring: true,
+          studyTargets: ["Country-to-top-producer matching recurs in every year analysed — keep a one-line 'leading producer' for each major mineral"] },
+        { name: "Himalayan Divisions & Mountain Passes", tags: [{l:"9",k:"ncert"},{l:"11",k:"ncert"}], desc: "The Himalayan ranges, the passes through them, and the states and regions they belong to.", priority: 3, 
+          studyTargets: ["Note the state or region each pass belongs to as you read about it — pass-to-state matching is a standard format"] },
+        { name: "Northern Plains, Peninsular Plateau & Islands", tags: [{l:"9",k:"ncert"},{l:"11",k:"ncert"}], desc: "The other major physiographic divisions of India, and notable landforms within them.", priority: 2 },
+        { name: "Drainage — Evolution & Patterns", tags: [{l:"9",k:"ncert"},{l:"11",k:"ncert"}], desc: "How India's drainage system evolved, and the patterns rivers form: dendritic, radial, pinnate and trellis.", priority: 3, recurring: true },
+        { name: "Himalayan Rivers", tags: [{l:"9",k:"ncert"}], desc: "The Indus, Ganga and Brahmaputra systems.", priority: 2 },
+        { name: "Peninsular Rivers & Tributaries", tags: [{l:"9",k:"ncert"},{l:"11",k:"ncert"}], desc: "Peninsular river systems, their tributaries, and the states they flow through.", priority: 3, recurring: true,
+          studyTargets: ["River-to-tributary and river-to-state matching is the recurring format — build the pairs for the Narmada, Godavari, Krishna and Kaveri systems"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "The Moyar and Palar rivers are listed among the Geography topics reported for this paper" }] },
+        { name: "Monsoon & Climate of India", tags: [{l:"9",k:"ncert"}], desc: "The monsoon mechanism, seasons and regional variation.", priority: 1 },
+        { name: "Indian Soils", tags: [{l:"10",k:"ncert"}], desc: "Soil types and their distribution, including zonal and interzonal soils.", priority: 2 },
+        { name: "Natural Vegetation & Forest Types", tags: [{l:"10",k:"ncert"}], desc: "Forest types and the characteristic trees of each.", priority: 1 },
+        { name: "Agriculture — Cropping Seasons & Leading States", tags: [{l:"10",k:"ncert"}], desc: "Kharif, Rabi and Zaid seasons, cropping patterns and the leading producing states.", priority: 2 },
+        { name: "India's Minerals & Energy Resources", tags: [{l:"10",k:"ncert"}], desc: "Distribution of minerals and energy resources across India, including offshore petroleum.", priority: 2, recurring: true },
+        { name: "Industries & Industrial Regions", tags: [{l:"10",k:"ncert"}], desc: "Industrial regions of India and the industries concentrated in each.", priority: 1 },
+        { name: "Population & Settlement Geography", tags: [{l:"9",k:"ncert"},{l:"12",k:"ncert"}], desc: "Census-based demography; India and Karnataka literacy and density figures are directly tested.", priority: 2, karnataka: true },
+        { name: "Migration Theories & Population Structure", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Zelinsky's migration transition theory and how population pyramids describe a population's structure.", priority: 1 },
+      ]
+    },
+    {
+      id: "p1-geo-karnataka", paper: "Paper I", section: "Section B · Geography",
+      title: "Karnataka-Specific Geography",
+      meta: "Explicit syllabus emphasis — consistently high PYQ frequency",
+      topics: [
+        { name: "Physical Divisions — Karavali, Malnad & Bayaluseeme", tags: [{l:"DEGREE",k:"degree"}], desc: "Karavali (coastal), Malnad (hill) and Bayaluseeme (Maidan, plains) regions.", priority: 3, karnataka: true },
+        { name: "Western Ghats in Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "The Western Ghats as Karnataka's western edge and their influence on rainfall, rivers and vegetation.", priority: 2, karnataka: true },
+        { name: "Peaks & Hill Ranges of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's major peaks and hill ranges; height-ordering is tested.", priority: 2, karnataka: true,
+          studyTargets: ["Learn the peaks as a height-ranked list, not just a set of names"] },
+        { name: "Geology of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "The Dharwar Craton, the Closepet Granite and the Kaladgi Basin.", priority: 2, karnataka: true },
+        { name: "Climate, Rainfall & Soils of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Climate zones, rainfall distribution within the State, and soil types.", priority: 2, karnataka: true },
+        { name: "Krishna Basin Rivers & Irrigation Projects", tags: [{l:"DEGREE",k:"degree"}], desc: "The Krishna and Tungabhadra systems and the major irrigation projects in the Krishna basin.", priority: 3, recurring: true, karnataka: true },
+        { name: "Kaveri Basin & the Kaveri Dispute", tags: [{l:"DEGREE",k:"degree"}], desc: "The Kaveri system and the inter-state dispute over its waters.", priority: 2, karnataka: true },
+        { name: "West-Flowing Rivers & Water Diversion Projects", tags: [{l:"DEGREE",k:"degree"}], desc: "Sharavathi and the other west-flowing rivers, and proposals to divert their water to water-deficient regions.", priority: 2, karnataka: true },
+        { name: "River Catchment Areas", tags: [{l:"DEGREE",k:"degree"}], desc: "The relative catchment areas of Karnataka's river basins.", priority: 2, karnataka: true },
+        { name: "Waterfalls of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's waterfalls matched to the rivers that form them.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Waterfall-to-river matching is flagged as recurring in the original analysis — build the pairs once and keep them"] },
+        { name: "Dams & Hydel Power Projects", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's dams and hydel power stations, as distinct from its thermal stations.", priority: 2, karnataka: true,
+          studyTargets: ["Know which stations are hydel (Kadra, Nagjhari, Kodasalli and others) versus thermal (Yermarus)"] },
+        { name: "Irrigation in Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Tank irrigation trends and the percentage of area irrigated — a recurring Economy/Geography crossover theme.", priority: 3, recurring: true, karnataka: true,
+          studyTargets: ["Learn the share of each irrigation source, not only tanks — flagged as a recurring theme in the original analysis"] },
+        { name: "Agro-Climatic Zones", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's distinct agricultural zones, including the North Eastern Transition Zone.", priority: 3, karnataka: true,
+          studyTargets: ["Learn each zone with its districts — the North Eastern Transition Zone is flagged as directly tested in the original analysis"] },
+        { name: "Crops & Agricultural Regions", tags: [{l:"DEGREE",k:"degree"}], desc: "Major, plantation and commercial crops of Karnataka and where each is grown.", priority: 2, karnataka: true },
+        { name: "Mineral Resources of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Iron ore (Bellary-Hospet), manganese, gold (Kolar), granite.", priority: 2, karnataka: true },
+        { name: "Forests & Wildlife", tags: [{l:"DEGREE",k:"degree"}], desc: "Western Ghats biodiversity, national parks and sanctuaries — heavily tested via IUCN status & animal-sanctuary matching. (Ramsar sites and species-conservation questions are covered under Environment & Ecology.)", priority: 3, recurring: true, karnataka: true,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Wildlife sanctuaries are listed among the Geography topics reported for this paper" }] },
+        { name: "Districts & Administrative Divisions", tags: [{l:"DEGREE",k:"degree"}], desc: "Administrative divisions of Karnataka and notable features of each region.", priority: 2, karnataka: true },
+        { name: "Transport & Communication in Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's transport networks and major transport projects.", priority: 2, karnataka: true },
+        { name: "Industries & Power Sources of Karnataka", tags: [{l:"DEGREE",k:"degree"}], desc: "Major, medium, small and agro-based industries, and the State's sources of power: hydro, thermal, solar, nuclear and wind.", priority: 2, karnataka: true }
+      ]
+    },
+    {
+      id: "p1-polity-constitutional", paper: "Paper I", section: "Section B · Polity",
+      title: "Constitutional Framework",
+      meta: "Consistently one of the top-weighted Paper I subjects",
+      topics: [
+        { name: "Making of the Constitution — Constituent Assembly", tags: [{l:"8",k:"ncert"},{l:"11",k:"ncert"}], desc: "Formation and working of the Constituent Assembly, and the drafting process that produced the Constitution.", priority: 2 },
+        { name: "Constituent Assembly Committees & Chairmen", tags: [{l:"8",k:"ncert"},{l:"11",k:"ncert"}], desc: "The major committees of the Constituent Assembly and who chaired each.", priority: 3, recurring: true,
+          studyTargets: ["Committee-to-chairman matching is a recurring format — learn them as pairs"] },
+        { name: "Sources of the Constitution & Comparative Features", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Features borrowed from other constitutions, and comparisons between India and other systems.", priority: 1 },
+        { name: "Preamble & Key Terms", tags: [{l:"8",k:"ncert"},{l:"11",k:"ncert"}], desc: "The philosophy and key words of the Preamble.", priority: 1 },
+        { name: "Salient Features & Nature of Indian Federalism", tags: [{l:"8",k:"ncert"},{l:"11",k:"ncert"}], desc: "Federal-with-unitary-bias, parliamentary system, single citizenship.", priority: 2,
+          studyTargets: ["K. C. Wheare's description of the Constitution as 'quasi-federal' is the standard reference"] },
+        { name: "Fundamental Rights & DPSP", tags: [{l:"8",k:"ncert"},{l:"11",k:"ncert"}], desc: "Overview level: the six categories of Fundamental Rights and the Directive Principles. The article-level topics that follow go deeper on specific provisions.", priority: 3, recurring: true },
+        { name: "Article 12 — Meaning of 'State'", tags: [{l:"11",k:"ncert"}], desc: "Which bodies count as 'State' for the purposes of Fundamental Rights.", priority: 3, recurring: true },
+        { name: "Right to Education — Article 21A & the 86th Amendment", tags: [{l:"11",k:"ncert"}], desc: "Article 21A, the 86th Constitutional Amendment and the Right to Education Act.", priority: 3, recurring: true,
+          studyTargets: ["Article 21A is named in the original analysis among the recurring article-number themes — treat it as a must-know"] },
+        { name: "Writs & Constitutional Remedies", tags: [{l:"11",k:"ncert"}], desc: "The five writs and the Right to Constitutional Remedies.", priority: 2,
+          studyTargets: ["Match each writ to its purpose: habeas corpus, mandamus, prohibition, certiorari and quo warranto"] },
+        { name: "Directive Principles — Article 38 & Related Provisions", tags: [{l:"11",k:"ncert"}], desc: "The Directive Principles directing the State to reduce inequalities and promote welfare.", priority: 3, recurring: true,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Article 38(1-2) is listed among the Polity topics reported for this paper" }] },
+        { name: "Fundamental Duties", tags: [{l:"11",k:"ncert"}], desc: "The list of Fundamental Duties and how they differ from rights.", priority: 1 },
+        { name: "Citizenship — Citizenship Act 1955", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Citizenship provisions and amendments, Section 6A, and the NRI, PIO and OCI categories.", priority: 2 },
+        { name: "Constitutional Schedules", tags: [{l:"11",k:"ncert"}], desc: "What each Schedule contains.", priority: 2,
+          studyTargets: ["Third (oaths), Fourth (Rajya Sabha seats), Eighth (languages), Tenth (anti-defection) — a standard matching set"] },
+        { name: "Article-to-Subject Matching", tags: [{l:"11",k:"ncert"}], desc: "Specific Article numbers and what each deals with.", priority: 3, recurring: true,
+          studyTargets: ["Keep a one-line meaning for each: 12, 21A and 38 (flagged as recurring in the original analysis), plus 72, 155, 164, 201, 213, 312 and 355. Article 164(1A) is commonly cited as the 15% cap on a State's Council of Ministers (91st Amendment) — verify"],
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Article 164(1A) and Article 38(1-2) are listed among the Polity topics reported for this paper" }] },
+        { name: "Landmark Constitutional Amendments", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The amendments that most often appear: Privy Purses abolition, the 86th, the 91st cap on ministers, the 101st (GST), the 106th (women's reservation) and the 124th (EWS).", priority: 3, 
+          studyTargets: ["Number-to-subject pairs to learn: 26th (Privy Purses), 52nd (anti-defection), 86th (Art 21A), 91st (15% cap), 101st (GST), 106th (women's reservation), 124th (EWS)"] },
+        { name: "Basic Structure Doctrine & Key Cases", tags: [{l:"DEGREE",k:"degree"}], desc: "The Supreme Court's limits on Parliament's power to amend the Constitution.", priority: 2, 
+          studyTargets: ["Know which case held Fundamental Rights beyond Article 368 (Golaknath) versus the case that laid down the basic structure doctrine (Kesavananda Bharati)"] },
+        { name: "President — Election, Powers & Impeachment", tags: [{l:"11",k:"ncert"}], desc: "How the President is elected, the powers of the office, and the impeachment procedure.", priority: 3,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Impeachment of the President is listed among the Polity topics reported for this paper" }] },
+        { name: "President — Pardoning Power (Article 72)", tags: [{l:"11",k:"ncert"}], desc: "Pardon, reprieve, respite, remission and commutation, including in death-sentence cases.", priority: 3, recurring: true },
+        { name: "President — Veto Powers & the Pocket Veto", tags: [{l:"11",k:"ncert"}], desc: "Absolute, suspensive and pocket veto, and how the Indian position compares with the US.", priority: 3, recurring: true,
+          studyTargets: ["India has absolute, suspensive and pocket veto; the qualified veto is a US feature"],
+          pyq: [{ year: "2024 (Dec)", ref: "Paper I, Q89", note: "Compare India's Presidential Pocket Veto with the US President's equivalent" }] },
+        { name: "Vice-President, Prime Minister & Council of Ministers", tags: [{l:"11",k:"ncert"}], desc: "The Vice-President, the Prime Minister and the Council of Ministers, including collective responsibility.", priority: 2 },
+        { name: "Parliament — Sessions & Procedure", tags: [{l:"11",k:"ncert"}], desc: "Sessions, prorogation, adjournment and recess, and parliamentary devices such as the Calling Attention motion and privilege motions.", priority: 3, },
+        { name: "Parliamentary Committees", tags: [{l:"11",k:"ncert"}], desc: "The financial and other committees of Parliament.", priority: 2 },
+        { name: "Bills, Lapse & Joint Sitting", tags: [{l:"11",k:"ncert"}], desc: "The legislative process, what happens to pending bills when the Lok Sabha is dissolved, and resolution of a deadlock between the two Houses.", priority: 3,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "'Bill lapses when?' is listed among the Polity topics reported for this paper" }] },
+        { name: "Supreme Court & Judicial Review", tags: [{l:"11",k:"ncert"}], desc: "Jurisdiction and powers of the Supreme Court, judicial review and review petitions.", priority: 3, },
+        { name: "Subordinate Judiciary & Lok Adalats", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "District judges and the Permanent Lok Adalats.", priority: 2 },
+        { name: "Attorney General & CAG", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Appointment and role of the Attorney General, and the CAG's tenure, salary and audit powers.", priority: 2 },
+        { name: "Right to Information & Transparency", tags: [{l:"DEGREE",k:"degree"}], desc: "The RTI Act 2005 and transparency in government.", priority: 2 },
+        { name: "Lokpal & Lokayukta", tags: [{l:"DEGREE",k:"degree"}], desc: "The Lokpal and Lokayuktas Act 2013, and the Lokayukta in Karnataka.", priority: 2, karnataka: true },
+        { name: "E-Governance & Citizen's Charters", tags: [{l:"DEGREE",k:"degree"}], desc: "Digital public services and citizen's charters as tools of accountable administration.", priority: 1 },
+        { name: "Commissions for SC/ST, Women, Minorities & Human Rights", tags: [{l:"DEGREE",k:"degree"}], desc: "The national and State commissions that protect weaker sections and human rights.", priority: 1 },
+        { name: "Welfare Provisions for SC/ST & Backward Classes", tags: [{l:"DEGREE",k:"degree"}], desc: "Constitutional provisions for Scheduled Castes, Scheduled Tribes and backward classes, including reservation.", priority: 2 },
+        { name: "Governor & State Executive", tags: [{l:"11",k:"ncert"}], desc: "The Governor, Chief Minister and State Council of Ministers.", priority: 2, karnataka: true },
+        { name: "State Legislature — Councils, Tenure & Dissolution", tags: [{l:"11",k:"ncert"}], desc: "Legislative Councils, Assembly tenure and dissolution.", priority: 2 },
+        { name: "Union, State & Concurrent Lists", tags: [{l:"11",k:"ncert"}], desc: "Subjects in each list.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "'All three lists' (Union, State, Concurrent) is listed among the Polity topics reported for this paper" }] },
+        { name: "Centre-State Relations & Fiscal Federalism", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Legislative, administrative and financial relations, the Sarkaria Commission, and why cesses and surcharges sit outside the divisible pool.", priority: 3,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Article 270 (distribution of taxes between the Union and States) is listed among the Polity topics reported for this paper" }] },
+        { name: "Emergency Provisions", tags: [{l:"11",k:"ncert"}], desc: "National, State and Financial Emergencies.", priority: 2 },
+        { name: "Union Territories", tags: [{l:"11",k:"ncert"}], desc: "Administration of Union Territories and special jurisdictions.", priority: 1 },
+        { name: "Special Provisions — Inner Line Permit, Sixth Schedule & Article 371(J)", tags: [{l:"DEGREE",k:"degree"}], desc: "Regional special provisions, including the Inner Line Permit, the Sixth Schedule tribal areas and Article 371(J) for the Kalyana Karnataka region.", priority: 3, karnataka: true,
+          studyTargets: ["Article 371(J) is commonly cited as inserted by the 98th Amendment (2012) — verify this against an official source"] },
+        { name: "Karnataka High Court", tags: [{l:"DEGREE",k:"degree"}], desc: "Appointment of the Chief Justice, the seat and benches of the Karnataka High Court, and its Chief Justices.", priority: 2, karnataka: true },
+        { name: "Election Commission & the Electoral System", tags: [{l:"11",k:"ncert"}], desc: "Functions of the Election Commission, the electoral systems used for different offices, and EVMs and VVPAT.", priority: 3, recurring: true },
+        { name: "Political Parties & Recognition", tags: [{l:"11",k:"ncert"}], desc: "How parties are recognised as national or State parties, and the objectives of political parties.", priority: 2 },
+        { name: "UPSC & State Public Service Commissions", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Composition and powers of the UPSC and the State PSCs.", priority: 2, recurring: true },
+        { name: "NITI Aayog & the National Development Council", tags: [{l:"DEGREE",k:"degree"}], desc: "Structure and role of NITI Aayog, which replaced the Planning Commission, and of the National Development Council.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "NITI Aayog is listed among the Current Affairs topics reported for this paper" }] },
+      ]
+    },
+    {
+      id: "p1-polity-local", paper: "Paper I", section: "Section B · Polity",
+      title: "Local Self-Government",
+      meta: "Highest direct relevance to the KAS administrative role",
+      topics: [
+        { name: "73rd & 74th Amendments", tags: [{l:"8",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Panchayati Raj & Municipalities institutionalization — 11th/12th Schedule subjects devolved.", priority: 3 },
+        { name: "Eleventh & Twelfth Schedules", tags: [{l:"DEGREE",k:"degree"}], desc: "The subjects devolved to panchayats (Eleventh Schedule) and to municipalities (Twelfth Schedule).", priority: 2 },
+        { name: "Gram Sabha & Gram Panchayat", tags: [{l:"8",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The village-level body, its functions and the role of the Gram Sabha.", priority: 3, karnataka: true },
+        { name: "Taluk & Zilla Panchayat", tags: [{l:"DEGREE",k:"degree"}], desc: "The intermediate and district tiers of Panchayati Raj and their powers and functions.", priority: 2, karnataka: true },
+        { name: "Panchayat Elections, Tenure & Reservation", tags: [{l:"DEGREE",k:"degree"}], desc: "Five-year term, State Election Commission, and reservation of seats for SC/ST and women.", priority: 2 },
+        { name: "State Finance Commission & Local Finance", tags: [{l:"DEGREE",k:"degree"}], desc: "The State Finance Commission's role in local-body finances, and the taxes and fees that may be assigned to local bodies.", priority: 3, karnataka: true,
+          studyTargets: ["The State Finance Commission and the State Election Commission have different Article numbers (commonly cited as 243I and 243K) — confirm each against the Constitution"] },
+        { name: "Karnataka Panchayat Raj Act, 1993", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka Panchayat Raj Act 1993 — exact commencement date is a confirmed PYQ detail.", priority: 3, recurring: true, karnataka: true,
+          pyq: [{ year: "2017", ref: "Paper I, Q35", note: "Identify the date on which Karnataka's Panchayati Raj Act, 1993 came into force" }] },
+        { name: "Urban Local Bodies", tags: [{l:"8",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Municipal Corporation, Municipality, Nagar Panchayat and the 74th Amendment's framework.", priority: 2, karnataka: true },
+        { name: "Karnataka's City Corporations", tags: [{l:"DEGREE",k:"degree"}], desc: "Which Karnataka cities function as City Corporations.", priority: 2, karnataka: true },
+        { name: "Anti-Defection Law", tags: [{l:"11",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "52nd Amendment — confirmed PYQ.", priority: 2, recurring: true,
+          pyq: [{ year: "2017", ref: "Paper I, Q31", note: "Identify the Constitutional Amendment known as the Anti-Defection Act" }] },
+        { name: "Autonomous District Councils", tags: [{l:"DEGREE",k:"degree"}], desc: "Executive/judicial/legislative powers — confirmed PYQ under Sixth Schedule.", priority: 2, recurring: true },
+        { name: "Regional Development Boards — Kalyana Karnataka (KKRDB)", tags: [{l:"DEGREE",k:"degree"}], desc: "The Kalyana Karnataka Regional Development Board, its jurisdiction and its constitutional basis.", priority: 3, karnataka: true,
+          studyTargets: ["Also named in the KAS Mains syllabus as part of regional development boards — one fact worth knowing at both levels"] }
+      ]
+    },
+    {
+      id: "p1-economy", paper: "Paper I", section: "Section B · Economy",
+      title: "Economy",
+      meta: "Consistently co-equal weightage with Geography/History/Polity",
+      topics: [
+        { name: "National Income — GDP, GNP & NNP", tags: [{l:"10",k:"ncert"},{l:"11",k:"ncert"}], desc: "Sectors, GDP/GNP/NNP and how national income is measured.", priority: 1 },
+        { name: "Sectors of the Economy", tags: [{l:"10",k:"ncert"}], desc: "Primary, secondary and tertiary sectors, and the organised and unorganised segments.", priority: 1 },
+        { name: "Five-Year Plans & the Planning Legacy", tags: [{l:"10",k:"ncert"},{l:"11",k:"ncert"}], desc: "Plan legacy even post-NITI Aayog: the Planning Commission and its replacement by NITI Aayog.", priority: 1 },
+        { name: "1991 Balance of Payments Crisis & Reforms", tags: [{l:"10",k:"ncert"}], desc: "The crisis behind the 1991 reforms and the policy response.", priority: 2 },
+        { name: "1991 LPG Reforms", tags: [{l:"10",k:"ncert"}], desc: "Liberalization, Privatization, Globalization — causes & key changes.", priority: 2 },
+        { name: "Reserve Bank of India — Functions & Governance", tags: [{l:"12",k:"ncert"}], desc: "The RBI's role as central bank: currency issue, banker to the government and regulator of banks.", priority: 2 },
+        { name: "Monetary policy tools", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Repo, CRR, Reverse Repo, LAF, OMO — CONFIRMED high-recurrence topic across years.", priority: 3, recurring: true, highPriority: true,
+          pyq: [{ year: "2017", ref: "Paper I, Q59", note: "Identify which of Repo Rate, CRR and Reverse Repo Rate are used in LAF" }] },
+        { name: "Repo, Reverse Repo & the Liquidity Adjustment Facility", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "How the repo and reverse repo rates operate within the LAF.", priority: 3, recurring: true },
+        { name: "CRR, SLR & Open Market Operations", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Reserve requirements and open market operations as tools of liquidity control.", priority: 3, recurring: true },
+        { name: "Monetary Policy Committee & Inflation Targeting", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The Monetary Policy Committee and the inflation-targeting framework.", priority: 2 },
+        { name: "Inflation & Price Indices (CPI, WPI)", tags: [{l:"12",k:"ncert"}], desc: "Types and causes of inflation, and how CPI and WPI differ.", priority: 2 },
+        { name: "Banking Structure — Commercial, Cooperative & Regional Rural Banks", tags: [{l:"DEGREE",k:"degree"}], desc: "The structure of the banking system and the role of NABARD and the cooperative sector.", priority: 1, karnataka: true },
+        { name: "Financial Markets & Financial Inclusion", tags: [{l:"DEGREE",k:"degree"}], desc: "Money and capital markets, SEBI, and financial-inclusion initiatives such as Jan Dhan accounts and digital payments.", priority: 1 },
+        { name: "Fiscal concepts", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Fiscal/revenue/primary deficit distinctions — confirmed recurring, exact definitions matter.", priority: 3, recurring: true },
+        { name: "Union Budget & Types of Expenditure", tags: [{l:"12",k:"ncert"}], desc: "Receipts and expenditure in the Union Budget, and revenue versus capital items.", priority: 2 },
+        { name: "Fiscal Responsibility & Public Debt", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "The FRBM Act and public debt.", priority: 1 },
+        { name: "Taxation — Direct & Indirect Taxes", tags: [{l:"12",k:"ncert"}], desc: "Direct and indirect taxes and the structure of GST (effective July 2017).", priority: 2 },
+        { name: "Finance Commission & GST Council", tags: [{l:"DEGREE",k:"degree"}], desc: "Constitutional basis (Art 280, Art 279A) — confirmed recurring.", priority: 3, recurring: true },
+        { name: "Foreign Trade & Balance of Payments", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Trade, the balance of payments and foreign exchange.", priority: 2 },
+        { name: "WTO, IMF & World Bank", tags: [{l:"DEGREE",k:"degree"}], desc: "International economic organisations and India's engagement with them.", priority: 1 },
+        { name: "Agriculture — MSP & Food Security", tags: [{l:"10",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Minimum Support Prices, the Public Distribution System and the National Food Security Act.", priority: 2 },
+        { name: "Rural Credit & Agricultural Marketing", tags: [{l:"DEGREE",k:"degree"}], desc: "Sources of rural credit and the marketing of agricultural produce.", priority: 1, karnataka: true },
+        { name: "Land Reforms & Agrarian Structure", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Land reforms and the agrarian structure, including the Gandhian approach and Karnataka's experience.", priority: 1, karnataka: true },
+        { name: "Rural development & welfare schemes", tags: [{l:"DEGREE",k:"degree"}], desc: "MGNREGA, PM-Kisan, PMAY — exact figures (financial assistance amounts) tested directly.", priority: 2 },
+        { name: "MGNREGA — Rural Employment Guarantee", tags: [{l:"DEGREE",k:"degree"}], desc: "The statutory guarantee of wage employment in rural areas.", priority: 2 },
+        { name: "PM-Kisan & Farmer Support Schemes", tags: [{l:"DEGREE",k:"degree"}], desc: "Income-support and other schemes for farmers.", priority: 2,
+          studyTargets: ["Know the exact financial-assistance amount and instalment structure — figures like these are flagged as directly tested"] },
+        { name: "Housing Schemes — PMAY", tags: [{l:"DEGREE",k:"degree"}], desc: "Pradhan Mantri Awas Yojana in its rural and urban forms.", priority: 2 },
+        { name: "Social Sector — Health, Education & Nutrition", tags: [{l:"DEGREE",k:"degree"}], desc: "The main social-sector initiatives of the Union government.", priority: 1 },
+        { name: "Poverty & demographics", tags: [{l:"10",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Multidimensional Poverty Index (NITI Aayog/UNDP/OPHI) — confirmed recurring theme.", priority: 3, recurring: true },
+        { name: "Poverty Measurement — Lines & Committees", tags: [{l:"10",k:"ncert"}], desc: "How poverty is measured, including the Lakdawala, Tendulkar and Rangarajan committees.", priority: 1 },
+        { name: "Demographics — Population Trends", tags: [{l:"10",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Population growth, age structure and the demographic dividend.", priority: 2 },
+        { name: "Human Development & Related Indices", tags: [{l:"DEGREE",k:"degree"}], desc: "The Human Development Index and other composite indices.", priority: 2 },
+        { name: "Sustainable Development Goals", tags: [{l:"DEGREE",k:"degree"}], desc: "The 17 Sustainable Development Goals of the 2030 agenda and India's progress.", priority: 2 },
+        { name: "Industrial Policy & MSMEs", tags: [{l:"10",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Industrial policy and the role of micro, small and medium enterprises.", priority: 1 },
+        { name: "Infrastructure & Energy Sector", tags: [{l:"DEGREE",k:"degree"}], desc: "Energy, transport and other economic infrastructure.", priority: 1 },
+        { name: "Employment & Labour", tags: [{l:"DEGREE",k:"degree"}], desc: "Employment trends and labour in the Indian economy.", priority: 1 },
+      ]
+    },
+    {
+      id: "p2-karnataka-gs", paper: "Paper II", section: "Section A",
+      title: "Karnataka State Current Affairs",
+      meta: "40 questions, 80 marks — start-from-scratch priority area",
+      isCurrentAffairs: true, topics: []
+    },
+    {
+      id: "p2-scitech", paper: "Paper II", section: "Section B · Science & Technology",
+      title: "Science & Technology",
+      meta: "Combined with Environment for 30Q/60 marks — educated non-specialist level",
+      topics: [
+        { name: "Space technology", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "ISRO missions (Gaganyaan, Chandrayaan, Aditya-L1) — confirmed heavily recurring, mission objectives tested in detail.", priority: 3, recurring: true, highPriority: true },
+        { name: "ISRO Launch Vehicles, Satellites & Navigation", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "PSLV and GSLV launch vehicles, the INSAT and IRS satellite systems, and the NavIC navigation system.", priority: 2 },
+        { name: "Chandrayaan & Lunar Missions", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "The Chandrayaan series of lunar missions and their objectives.", priority: 3, recurring: true },
+        { name: "Aditya-L1 & Solar Missions", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "India's solar observatory mission, its orbit and its scientific objectives.", priority: 3, recurring: true, highPriority: true,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q92-93", note: "Aditya-L1's orbit type (halo orbit around Sun-Earth Lagrangian point) and its scientific objectives" }] },
+        { name: "Gaganyaan & Human Spaceflight", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "India's human spaceflight programme.", priority: 2, recurring: true },
+        { name: "Mechanics, Motion & Energy", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Motion, force, work, energy and power — everyday-application framing, not derivations.", priority: 1 },
+        { name: "Optics — Light, Reflection & Rainbows", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Reflection, refraction, dispersion and rainbow formation — rainbow formation is a confirmed PYQ.", priority: 2, recurring: true,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q90", note: "Statement-correctness on secondary rainbow formation relative to a primary rainbow" }] },
+        { name: "Electricity & Magnetism", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Electric current, circuits and magnetic effects of current.", priority: 1 },
+        { name: "Heat, Sound & Waves", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Heat and temperature, sound and wave behaviour in everyday settings.", priority: 1 },
+        { name: "Atoms, Elements & the Periodic Table", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Atomic structure, elements, compounds and mixtures.", priority: 1 },
+        { name: "Radioactivity & Half-Life", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Radioactivity and half-life — confirmed recurring at conceptual level.", priority: 2, recurring: true,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q5", note: "Identify the radioactive material with the highest half-life (Uranium-238)" }] },
+        { name: "Acids, Bases, Salts & Chemical Reactions", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Acids, bases and salts, and the main types of chemical reaction.", priority: 1 },
+        { name: "Metals, Non-Metals & Alloys", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Properties and everyday uses of metals, non-metals and alloys.", priority: 1 },
+        { name: "Polymers, Plastics & Everyday Materials", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Polymers and plastics — confirmed recurring at conceptual level.", priority: 2, recurring: true },
+        { name: "Pollutants & Environmental Chemistry", tags: [{l:"9",k:"ncert"},{l:"10",k:"ncert"}], desc: "Common pollutants and their chemistry.", priority: 1 },
+        { name: "Cell Biology & Human Body Systems", tags: [{l:"10",k:"ncert"},{l:"12",k:"ncert"}], desc: "The cell, and the digestive, circulatory, respiratory, excretory and reproductive systems.", priority: 1 },
+        { name: "Genetics — Hardy-Weinberg Principle", tags: [{l:"10",k:"ncert"},{l:"12",k:"ncert"}], desc: "Heredity and the Hardy-Weinberg principle — confirmed recurring.", priority: 2, recurring: true,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q4", note: "Which factor changes allele/gene frequencies under Hardy-Weinberg conditions" }] },
+        { name: "Cell Signalling — Second Messengers", tags: [{l:"12",k:"ncert"}], desc: "Second messengers in cell signalling — confirmed recurring.", priority: 2, recurring: true },
+        { name: "Health, Nutrition & Disease", tags: [{l:"10",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "General issues on health, nutrition, communicable diseases and prevention.", priority: 2 },
+        { name: "Public Health Programmes", tags: [{l:"DEGREE",k:"degree"}], desc: "National health programmes such as the National Health Mission and immunisation.", priority: 1 },
+        { name: "Vaccines, Immunity & Biotechnology", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Immunity and vaccines, genetic engineering and applications of biotechnology.", priority: 2 },
+        { name: "IT & digital technology", tags: [{l:"CA",k:"ca"}], desc: "Blockchain, Web 3.0, AI policy developments — conceptual understanding tested via statement-correctness.", priority: 2 },
+        { name: "Blockchain & Web 3.0", tags: [{l:"CA",k:"ca"}], desc: "What blockchain and Web 3.0 are, and their applications.", priority: 2 },
+        { name: "Artificial Intelligence & Policy Developments", tags: [{l:"CA",k:"ca"}], desc: "Basics of AI and recent policy developments around it.", priority: 2 },
+        { name: "Cybersecurity & Digital Public Infrastructure", tags: [{l:"CA",k:"ca"},{l:"DEGREE",k:"degree"}], desc: "Cybersecurity basics, digital identity and digital payments.", priority: 1 },
+        { name: "Quantum Technology", tags: [{l:"CA",k:"ca"}], desc: "Basics of quantum mechanics and quantum technologies.", priority: 2,
+          pyq: [{ year: "2024 (Dec)", ref: "Adda247 analysis of the 29 Dec 2024 paper (topic only, no question number)", note: "Quantum mechanics is listed among the Science topics reported for this paper" }] },
+        { name: "Defence technology", tags: [{l:"CA",k:"ca"}], desc: "DRDO developments — overlaps with Paper I-A current affairs.", priority: 2 },
+        { name: "Nuclear technology", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "Nuclear energy — confirmed recurring theme.", priority: 2, recurring: true },
+        { name: "Nuclear Basics — Fission & Fusion", tags: [{l:"DEGREE",k:"degree"}], desc: "Nuclear fission and fusion, and how reactors work.", priority: 1 },
+        { name: "Small Modular Reactors & Nuclear Power Economics", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "Small Modular Reactors and the economics of nuclear power plants — confirmed recurring theme.", priority: 2, recurring: true },
+        { name: "India's Three-Stage Nuclear Power Programme", tags: [{l:"DEGREE",k:"degree"}], desc: "The three-stage nuclear power programme.", priority: 1 }
+      ]
+    },
+    {
+      id: "p2-environment", paper: "Paper II", section: "Section B · Environment & Ecology",
+      title: "Environment & Ecology",
+      meta: "Consistently recurring: wetlands, protected areas, conservation policy",
+      topics: [
+        { name: "Ecosystem basics", tags: [{l:"7",k:"ncert"},{l:"12",k:"ncert"}], desc: "Food chains, energy flow, biogeochemical cycles.", priority: 1,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q6", note: "Assertion-Reason on energy flow reduction at each trophic level" }] },
+        { name: "Food Chains, Food Webs & Trophic Levels", tags: [{l:"7",k:"ncert"},{l:"12",k:"ncert"}], desc: "Producers, consumers and decomposers, and how energy declines at each trophic level.", priority: 1 },
+        { name: "Energy Flow & Ecological Pyramids", tags: [{l:"12",k:"ncert"}], desc: "Energy flow through an ecosystem and the ecological pyramids.", priority: 1 },
+        { name: "Biogeochemical Cycles", tags: [{l:"12",k:"ncert"}], desc: "The carbon, nitrogen and water cycles.", priority: 1 },
+        { name: "Biodiversity & hotspots", tags: [{l:"12",k:"ncert"}], desc: "Western Ghats relevance — confirmed via Kasturirangan Committee, Lion-Tailed Macaque questions.", priority: 3, recurring: true, karnataka: true },
+        { name: "Biodiversity — Levels & Threats", tags: [{l:"12",k:"ncert"}], desc: "Genetic, species and ecosystem diversity, and the main threats to biodiversity.", priority: 2 },
+        { name: "Hotspots & the Western Ghats", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Biodiversity hotspots and the Western Ghats, including the Kasturirangan Committee.", priority: 3, recurring: true, karnataka: true },
+        { name: "Species Conservation — IUCN Status & Red Data Book", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "IUCN conservation categories and the Red Data Book, including the Lion-Tailed Macaque.", priority: 3, recurring: true, karnataka: true },
+        { name: "Climate change & international agreements", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "Paris Agreement, COP framework, Mission LiFE — confirmed recurring.", priority: 2, recurring: true },
+        { name: "Climate Change — Causes & Impacts", tags: [{l:"12",k:"ncert"},{l:"DEGREE",k:"degree"}], desc: "Greenhouse gases, global warming and their impacts.", priority: 2 },
+        { name: "Paris Agreement & the COP Framework", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "The UN climate framework and the Paris Agreement.", priority: 2, recurring: true },
+        { name: "Mission LiFE & India's Climate Initiatives", tags: [{l:"DEGREE",k:"degree"},{l:"CA",k:"ca"}], desc: "Mission LiFE and India's climate commitments.", priority: 2, recurring: true,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q8", note: "Statement-correctness on Mission LiFE announcement at COP-27" }] },
+        { name: "Protected area network", tags: [{l:"DEGREE",k:"degree"}], desc: "National Parks, Wildlife Sanctuaries, Biosphere Reserves — Karnataka-specific ones heavily tested via matching format.", priority: 3, recurring: true, karnataka: true },
+        { name: "National Parks & Wildlife Sanctuaries", tags: [{l:"DEGREE",k:"degree"}], desc: "The difference between national parks and sanctuaries, and how they are notified.", priority: 2 },
+        { name: "Biosphere Reserves & Tiger Reserves", tags: [{l:"DEGREE",k:"degree"}], desc: "Biosphere reserves and Project Tiger.", priority: 2 },
+        { name: "Karnataka's Protected Areas", tags: [{l:"DEGREE",k:"degree"}], desc: "Karnataka's national parks, sanctuaries and tiger reserves, matched to location and species.", priority: 3, recurring: true, karnataka: true },
+        { name: "Ramsar wetlands", tags: [{l:"CA",k:"ca"}], desc: "Confirmed recurring theme — new additions tested yearly, know the current Karnataka Ramsar count.", priority: 2, recurring: true, karnataka: true },
+        { name: "Wetlands of India — Conservation & Management", tags: [{l:"DEGREE",k:"degree"}], desc: "Wetland types, their value and how they are conserved.", priority: 1 },
+        { name: "Environmental legislation", tags: [{l:"DEGREE",k:"degree"}], desc: "Environment Protection Act, Wildlife Protection Act, Forest Conservation Act — Eco-Sensitive Zone rules confirmed PYQ.", priority: 2 },
+        { name: "Environment Protection Act & Pollution Control Laws", tags: [{l:"DEGREE",k:"degree"}], desc: "The Environment Protection Act 1986 and the Air and Water pollution-control Acts.", priority: 2 },
+        { name: "Wildlife Protection Act & Biological Diversity Act", tags: [{l:"DEGREE",k:"degree"}], desc: "The Wildlife Protection Act 1972 and the Biological Diversity Act 2002.", priority: 2 },
+        { name: "Forest Conservation Act & Eco-Sensitive Zones", tags: [{l:"DEGREE",k:"degree"}], desc: "The Forest Conservation Act and the rules for Eco-Sensitive Zones around protected areas.", priority: 2,
+          pyq: [{ year: "2024 (Aug)", ref: "Paper II, Q9", note: "Statement-correctness on Eco-Sensitive Zone rules around protected areas" }] },
+        { name: "Ozone layer & atmosphere", tags: [{l:"11",k:"ncert"}], desc: "Confirmed recurring: Dobson units, CFCs, atmospheric layer classification.", priority: 2, recurring: true },
+        { name: "Ozone Depletion & the Montreal Protocol", tags: [{l:"11",k:"ncert"}], desc: "How CFCs deplete ozone, and the Montreal Protocol.", priority: 2 },
+        { name: "Pollution — Air, Water, Soil & Noise", tags: [{l:"DEGREE",k:"degree"}], desc: "Types, sources and remedies for the main forms of pollution.", priority: 2 },
+        { name: "Solid Waste Management", tags: [{l:"DEGREE",k:"degree"}], desc: "Types of solid waste, and recycling and reuse.", priority: 1 },
+        { name: "Renewable Energy Sources", tags: [{l:"DEGREE",k:"degree"}], desc: "Solar, wind, hydro, biomass and other renewable energy sources.", priority: 1 },
+        { name: "Disaster Management — Floods, Cyclones & Earthquakes", tags: [{l:"DEGREE",k:"degree"}], desc: "Natural and man-made disasters and the framework for managing them.", priority: 2 },
+      ]
+    },
+    {
+      id: "p2-gma", paper: "Paper II", section: "Section C · General Mental Ability",
+      title: "General Mental Ability",
+      meta: "30 questions, 60 marks — officially capped at SSLC/Class 10 difficulty",
+      topics: [
+        { name: "Comprehension", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Passage-based: main idea, inference, vocabulary-in-context. Confirmed: always 2 passages, 3-4 Qs each, always LAST in the GMA block.", priority: 2 },
+        { name: "Reading Comprehension — Main Idea & Inference", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Identifying the main idea and drawing inferences from a passage.", priority: 2 },
+        { name: "Vocabulary in Context", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Working out a word's meaning from the passage around it.", priority: 1 },
+        { name: "Logical reasoning", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Blood relations, coding-decoding, syllogism, seating arrangement, direction sense, series — confirmed recurring exact sub-types.", priority: 3, recurring: true },
+        { name: "Blood Relations", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Working out family relationships from a set of clues.", priority: 3, recurring: true },
+        { name: "Symbolic Operations", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Questions that define new symbols for arithmetic operations.", priority: 2, recurring: true },
+        { name: "Syllogism & Statement-Based Reasoning", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Drawing valid conclusions from given statements.", priority: 3, recurring: true },
+        { name: "Seating Arrangement", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Arranging people or items in a row or circle from conditions.", priority: 3, recurring: true },
+        { name: "Coding-Decoding", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Working out the pattern in a code.", priority: 2 },
+        { name: "Direction Sense & Ranking", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Direction and distance problems, and ranking or order.", priority: 2 },
+        { name: "Number & Alphabet Series", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Finding the next term in a number or alphabet series.", priority: 2 },
+        { name: "Analogy, Classification & Odd-One-Out", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Relationship and grouping questions.", priority: 1 },
+        { name: "Decision making & problem solving", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Situation-based judgment questions.", priority: 1 },
+        { name: "Basic numeracy", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Percentages, ratio, SI/CI, profit-loss, time-work, averages, probability — confirmed LARGEST GMA sub-block (8 of 18 in verified paper).", priority: 3, recurring: true, highPriority: true },
+        { name: "Number System & Order of Magnitude", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Numbers and their relations, and order of magnitude.", priority: 2 },
+        { name: "Percentages, Ratio & Proportion", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Percentage, ratio and proportion problems.", priority: 3, recurring: true },
+        { name: "Simple & Compound Interest", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Simple and compound interest.", priority: 3, recurring: true },
+        { name: "Profit & Loss", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Profit, loss and discount.", priority: 2 },
+        { name: "Time, Work & Speed-Distance", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Time and work, and speed-time-distance problems.", priority: 2 },
+        { name: "Averages", tags: [{l:"8",k:"ncert"},{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Averages and weighted averages.", priority: 2 },
+        { name: "Probability, Permutations & Combinations", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Basic probability, permutations and combinations.", priority: 2 },
+        { name: "Data interpretation", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Tables, bar/line/pie charts, data sufficiency — all capped at SSLC level per notification.", priority: 1 },
+        { name: "Tables & Charts — Bar, Line & Pie", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Reading and comparing data from tables and charts.", priority: 1 },
+        { name: "Data Sufficiency", tags: [{l:"10",k:"ncert"},{l:"SSLC",k:"ssle"}], desc: "Deciding whether the given data is enough to answer a question.", priority: 1 }
+      ]
+    }
+
+  ],
+
+  practiceQuestions: [
+    {
+      id: "pq1", source: "real", cite: "KAS Prelims 2024 (Aug), Paper II, Q4",
+      section: "Science & Technology", type: "Straight MCQ",
+      prompt: "As per Hardy-Weinberg law, the genotype and allele frequencies remain constant in the random mating population in the absence of which of the following factors?",
+      options: ["(a) Mutation", "(b) Migration", "(c) Selection", "(d) Genetic drift", "Codes: (1) (a),(b),(c) and (d)  (2) (a),(b) and (c) only  (3) (a),(b) and (d) only  (4) Only (a)"],
+      answer: "(1) (a), (b), (c) and (d)",
+      explain: "All four — mutation, migration, selection, and genetic drift — are the classic disruptors of Hardy-Weinberg equilibrium. This is straight NCERT-level genetics recall, tested via a code-matching format rather than plain MCQ."
+    },
+    {
+      id: "pq2", source: "practice",
+      section: "Science & Technology", type: "Statement correctness",
+      prompt: "Which of the following statements are correct with reference to ISRO's Aditya-L1 mission?\n(a) It is stationed at the L1 Lagrangian point between the Sun and Earth.\n(b) It studies the Sun from a halo orbit, not a fixed point.\n(c) Its payloads include instruments to study the solar corona and coronal mass ejections.\n(d) It is India's first mission to land an instrument package on the Moon's south pole.",
+      options: ["(1) (a), (b) and (c) only", "(2) (a) and (d) only", "(3) (b), (c) and (d) only", "(4) All of the above"],
+      answer: "(1) (a), (b) and (c) only",
+      explain: "(d) is false and is the classic trap — that's Chandrayaan-3, not Aditya-L1. This mirrors a real confirmed PYQ pattern (Aditya-L1's orbit type was directly tested in Aug 2024 Paper II) — expect ISRO missions to be cross-tested against each other's specifics."
+    },
+    {
+      id: "pq3", source: "practice",
+      section: "Mental Ability — Numeracy", type: "Quantitative",
+      prompt: "A sum of money becomes 4 times itself in 15 years at simple interest. In how many years will it become 7 times itself at the same rate?",
+      options: ["(1) 25 years", "(2) 27 years", "(3) 30 years", "(4) 32 years"],
+      answer: "(3) 30 years",
+      explain: "If P becomes 4P in 15 years, the interest earned is 3P in 15 years → rate gives P interest every 5 years. To become 7P, interest needed is 6P → 6 × 5 = 30 years. This exact 'becomes N times itself' phrasing is a very common SI/CI pattern in the numeracy block — recognize the shortcut (interest-per-unit-time) rather than solving the full SI formula each time."
+    },
+    {
+      id: "pq4", source: "real", cite: "KAS Prelims 2024 (Aug), Paper II, Q19",
+      section: "Mental Ability — Reasoning", type: "Logical reasoning (Syllogism)",
+      prompt: "All oranges are bananas. No banana is fruit.\nConclusions: (a) Some bananas are oranges. (b) No fruit is banana. (c) All oranges are fruits. (d) Some fruits are oranges.",
+      options: ["(1) Only conclusion (c) and (d) follow", "(2) Only conclusion (a) and (b) follow", "(3) Only conclusion (a) and (c) follow", "(4) None of the above"],
+      answer: "(2) Only conclusion (a) and (b) follow",
+      explain: "Classic syllogism trap using deliberately absurd premises (oranges/bananas/fruit) to force pure logical reading over real-world knowledge. 'All A are B' converts validly to 'Some B are A' (→ a is valid). 'No B is C' converts validly to 'No C is B' (→ b is valid). Never let real-world truth override the stated premises."
+    },
+    {
+      id: "pq5", source: "practice",
+      section: "Polity", type: "Statement correctness w/ count",
+      prompt: "Consider the following statements regarding the pardoning power of the President of India:\n(a) The President's pardoning power is exercised under Article 72.\n(b) A pardon can remove both the conviction and the sentence entirely.\n(c) The President can grant pardon even in cases of death sentence.\n(d) Presidential pardon is subject to judicial review on limited grounds.\nHow many of the above statements are correct?",
+      options: ["(1) Only one", "(2) Only two", "(3) Only three", "(4) All four"],
+      answer: "(4) All four",
+      explain: "All four are accurate statements of settled constitutional position. This 'how many are correct' format — where every statement happens to be true — deliberately tests whether you second-guess a correct statement out of exam anxiety. Confirmed real papers show this exact shape recurring around Presidential powers (pardoning power and pocket veto both appear as PYQ topics)."
+    }
+  ],
+
+  personalStrategy: [
+    { section: "Paper I-A: National/Intl Current Affairs", start: "Already reading newspapers regularly", implication: "Lowest new-effort area — convert your existing habit into structured notes rather than starting new reading." },
+    { section: "Paper I-B: Humanities", start: "Last studied formally in Class 10", implication: "Highest-effort area. Needs full NCERT-base rebuild before adding degree-layer depth. Budget the most calendar time here." },
+    { section: "Paper II-A: State GS", start: "Starting from scratch", implication: "Needs an active new habit built immediately — don't leave this for later, since it compounds daily like national current affairs does." },
+    { section: "Paper II-B: Science/Tech/Environment", start: "Already has general idea", implication: "Lighter lift — focus mainly on staying current, less on foundational rebuilding." },
+    { section: "Paper II-C: Mental Ability", start: "Confident/can focus well here", implication: "Your strength area — maintain with steady practice rather than over-investing time that's better spent on Humanities." }
+  ],
+
+  sequencingPlan: [
+    { priority: 1, area: "Polity + Panchayati Raj", approach: "NCERT base first, then degree add-on layer; highest weightage + your weakest declared starting point overlap here." },
+    { priority: 2, area: "Modern History (Karnataka-weighted)", approach: "NCERT base, then Karnataka freedom-movement degree layer specifically — this is explicitly syllabus-emphasized." },
+    { priority: 3, area: "National Current Affairs (parallel, daily)", approach: "Convert existing reading into structured notes from day one." },
+    { priority: 3, area: "Karnataka Current Affairs (parallel, daily)", approach: "Build new habit from day one — do not delay." },
+    { priority: 4, area: "Geography (India + Karnataka)", approach: "NCERT base, then Karnataka degree layer." },
+    { priority: 5, area: "Ancient & Medieval History", approach: "NCERT base sufficient for most of it; Karnataka dynasties get degree-layer attention." },
+    { priority: 6, area: "Economy", approach: "NCERT base + degree layer; conceptual, moderate time investment." },
+    { priority: 7, area: "Science/Tech/Environment (light, ongoing)", approach: "Weekly current-developments skim; you already have the base." },
+    { priority: 7, area: "Mental Ability (light, ongoing)", approach: "Daily short practice sets (20-30 min) throughout, not backloaded to the final week." }
+  ],
+
+  strategyImplications: [
+    { title: "Practice format, not just content", detail: "Drill statement-correctness sets specifically — 3-4 statements per question, judge each independently before combining. This is now the dominant format, not a variant." },
+    { title: "Don't skip 'Only 1/2/3/4 correct' style questions", detail: "The count-based variant (25% of Dec-2024 Paper I) is harder than plain statement-correctness because there's no elimination shortcut — you must be sure about every statement." },
+    { title: "Treat Karnataka State GS as a memorization-heavy zone", detail: "Scheme names, eligibility numbers, and exact policy document titles are tested directly — vague familiarity with \"the scheme exists\" isn't enough." },
+    { title: "GMA: master Numeracy fundamentals first", detail: "It's the largest GMA sub-block; Comprehension is passage-based and needs no separate \"topic\" prep — just timed practice." }
+  ],
+
+  dataScope: [
+    { year: "2017", papers: "Paper I & II", note: "Full question-by-question classification" },
+    { year: "2020 (Aug)", papers: "Paper I & II", note: "Full classification + explicit format/subject counts" },
+    { year: "2024 (Aug)", papers: "Paper I & II", note: "Verified directly from your uploaded scanned paper — highest confidence" },
+    { year: "2024 (Dec)", papers: "Paper I & II", note: "Full classification + explicit format/subject counts" }
+  ]
+};
